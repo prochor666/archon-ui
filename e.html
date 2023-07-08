@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="cs">
+<!-- [#assign templateOriginCode = "DSE13FO_220516"] -->
+<head>
+<meta charset="UTF-8">
+<title>SMLOUVA O INVESTIČNÍM ÚČTU</title>
+<meta name="description" content="Origin document: Investment Account Portal Contract Create">
+<meta name="keywords" content="Creditas, document">
+<meta name="author" content="Banka CREDITAS a.s.">
+<style media="all">
+/*
+RESET
+*/
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+main, article, aside, figure, footer, header, nav, section, details, summary {display: block;}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+img,
+object,
+embed {max-width: 100%;}
+
+html {overflow-y: scroll;}
+
+ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before,
+blockquote:after,
+
+a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+
+input, select {vertical-align: middle;}
+
+pre {
+    white-space: pre; /* CSS2 */
+    white-space: pre-wrap; /* CSS 2.1 */
+    white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+    word-wrap: break-word; /* IE, Outlook older editions */
+}
+
+table {font-size: inherit; font: 100%;}
+
+small {font-size: 85%;}
+
+strong {font-weight: bold;}
+
+td, td img {vertical-align: top;}
+
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+.clearfix:after { content: " "; display: block; clear: both; }
+
+/*
+Page styles
+COMMON
+*/
+body {
+    font-family: 'Arial Unicode MS', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin-bottom: 60px;
+    width: 700px;
+}
+
+.template-base {
+    margin: 0 auto;
+    width: 700px;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+code {
+    padding: 0 0.25em;
+    border-radius: 0.25em;
+    background-color: #0073a0;
+    color: #fff;
+    box-decoration-break: clone;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 22px;
+    margin: 5px 0;
+    padding: 5px 0 0 0;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+blockquote {
+    border-left: 3px solid #0d0d0d;
+    padding-left: 15px;
+}
+
+p {
+    margin: 5px 0;
+    padding: 0;
+}
+
+.template-base table {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.template-base table td,
+.template-base table th {
+    min-width: 50px;
+    padding: 2px 4px;
+    vertical-align: top;
+    box-sizing: border-box;
+    position: relative;
+    border-width: 1px;
+    border-color: #c0d7f5;
+    border-style: solid;
+}
+
+.template-base table td > *,
+.template-base table th > * {
+    margin-bottom: 0;
+}
+
+.template-base table td p,
+.template-base table th p {
+    margin: 0;
+}
+
+.template-base table th {
+    font-weight: bold;
+    background-color: #c0d7f5;
+}
+
+.template-base ul {
+    padding: 2px 16px;
+    list-style-position: outside;
+}
+
+.template-base ul li {
+    list-style-type: disc;
+}
+
+.template-base ul li ul li {
+    list-style-type: circle;
+}
+
+.template-base ul li ul li ul li {
+    list-style-type: square;
+}
+
+.template-base ol {
+    padding: 2px 16px;
+    list-style-position: outside;
+}
+
+.template-base ol li {
+    list-style-type: decimal;
+}
+
+.template-base ol li ol li {
+    list-style-type: lower-alpha;
+}
+
+.template-base ol li ol li ol li {
+    list-style-type: lower-alpha;
+}
+
+.template-base .template-col .template-col-content {
+    white-space: normal;
+}
+
+.template-base img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+</style>
+<style media="print">
+/* ********
+* Print/PDF section
+******** */
+@page {
+    size: A4 portrait;
+    margin: 20px 38px 76px 38px;
+    font-family: 'Arial Unicode MS', Arial, Helvetica, sans-serif;
+
+    @bottom-right {
+        content: "[=templateOriginCode] | strana " counter(page) " / " counter(pages);
+        border-top: 1px solid #DDDDDD;
+        font-size: 10px;
+        color: #81ACCE;
+        font-family: 'Arial Unicode MS', Arial, Helvetica, sans-serif;
+    }
+
+    @bottom-center {
+        content: " ";
+        border-top:1px solid #DDDDDD;
+        font-size: 10px;
+    }
+
+    @bottom-left {
+        content: element(footer);
+        border-top:1px solid #DDDDDD;
+        font-size: 10px;
+    }
+}
+
+.template-base #footer {
+    position: running(footer);
+    font-family: 'Arial Unicode MS', Arial, Helvetica, sans-serif;
+    color: #888888;
+    font-size: 10px;
+    line-height: 16px;
+}
+
+.template-base #footer a {
+    color: #81ACCE;
+    text-decoration: none;
+}
+
+.template-base table td,
+.template-base table th {
+    min-width: 50px;
+    padding: 2px 4px;
+    vertical-align: top;
+    box-sizing: border-box;
+    position: relative;
+    border-width: 1px;
+    border-color: #c0d7f5;
+    border-style: solid;
+}
+</style>
+</head>
+<body>
+<div class="template-base">
+    <div class="template-row" style="margin:0 auto;padding:0;">
+        <div class="template-col" style="float:left;height:100%;min-height:100%;width:30%;">
+            <div class="template-col-content" style="background-attachment:scroll;background-color:rgb(255, 255, 255);background-image:none;background-position-x:left;background-position-y:top;background-repeat:no-repeat;background-size:100% auto;color:rgb(0,0,0);font-style:normal;font-weight:normal;margin-bottom:0px;margin-left:auto;margin-right:auto;margin-top:0px;min-height:100%;padding-bottom:0px;padding-left:0px;padding-right:0px;padding-top:10px;text-align:left;text-decoration:none;">
+            <p><img src="data:image/png;base64,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1LHMnfO+eyBLZmzd52s9/MbMcrlz07648fAgXv6IuaX6XQ+YeV8w34wnG/Fd1yR4nkJ55avndK6K4DJPWUKqc8ALybOx0tk3e8DcLx/6j+Mp/v7fbB5n17ZQ05fZ9twO30zcHo0S6+XaNzLYdcP978lXO1zNtLYDOMA+gttxZkyl/yG9tJMtDjxp+M+D2T1QuH1/qQM0LysynNR1HIJxDMYULByawASCjcd8PNgY4CXcXw6WbAZ/Gfx5QrIayivp2Y92ChQRkaGZvnAiXjsJt0ngRyTuR+zaLW8C5jW4HdT/QtsKvgN8Y8Cexew5yqyh1x4djksjREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREREROD/AOQXTdBFpltOAAAAAElFTkSuQmCC">&nbsp;</p>
+            </div>
+        </div>
+
+        <div class="template-col" style="float:left;height:100%;min-height:100%;width:70%;">
+            <div class="template-col-content" style="background-attachment:scroll;background-color:rgb(255, 255, 255);background-image:none;background-position-x:left;background-position-y:top;background-repeat:no-repeat;background-size:100% auto;color:rgb(0,0,0);font-style:normal;font-weight:normal;margin-bottom:0px;margin-left:auto;margin-right:auto;margin-top:0px;min-height:100%;padding-bottom:0px;padding-left:0px;padding-right:0px;padding-top:0px;text-align:left;text-decoration:none;">
+            <h1 style="text-align: right"><span style="color: rgb(37, 88, 154)">SMLOUVA O INVESTIČNÍM ÚČTU</span></h1>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div><div class="template-row" style="margin:0 auto;padding:0;">
+        <div class="template-col" style="float:none;height:100%;min-height:100%;width:100%;">
+            <div class="template-col-content" style="background-attachment:scroll;background-color:rgb(255, 255, 255);background-image:none;background-position-x:left;background-position-y:top;background-repeat:no-repeat;background-size:100% auto;color:rgb(0,0,0);font-style:normal;font-weight:normal;margin-bottom:0px;margin-left:auto;margin-right:auto;margin-top:0px;min-height:100%;padding-bottom:0px;padding-left:0px;padding-right:0px;padding-top:0px;text-align:left;text-decoration:none;">
+
+<table>
+    <tr>
+        <td colspan="4">
+            <strong>Banka CREDITAS a.s.</strong>, IČO: 63492555, se sídlem Sokolovská 675/9, Karlín, 186 00 Praha 8, zapsaná v obchodním rejstříku vedeném Městským soudem v Praze, oddíl B, vložka 23903
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            zastoupená pracovníkem: <strong>Ing. Věra Pavlišová, ředitelka Odboru pobočkové sítě</strong>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            (dále jen „<strong>Banka</strong>“) na straně jedné
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <strong>a</strong>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Jméno:
+        </td>
+        <td>
+            <strong>[=crm[0].fullName]</strong>
+        </td>
+        <td>
+            Rodné číslo*:
+        </td>
+        <td>
+            <strong style="white-space: nowrap;">[=crm[0].birthNumber]</strong>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Trvalé bydliště:
+        </td>
+        <td>
+            <strong>[=crm[0].permanentAddressStreet], [=crm[0].permanentAddressCity]</strong>
+        </td>
+        <td>
+            PSČ:
+        </td>
+        <td>
+            <strong style="white-space: nowrap;">[=crm[0].permanentAddressZip]</strong>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            Zastoupen (jméno):
+        </td>
+        <td colspan="2">
+            Zmocnění ze dne:
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <em>* Pokud rodné číslo nebylo v ČR přiděleno, datum narození.</em>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            (dále jen „<strong>Klient</strong>“) na straně druhé
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div><div class="template-row" style="margin:0 auto;padding:0;">
+        <div class="template-col" style="float:none;height:100%;min-height:100%;width:100%;">
+            <div class="template-col-content" style="background-attachment:scroll;background-color:rgb(255, 255, 255);background-image:none;background-position-x:left;background-position-y:top;background-repeat:no-repeat;background-size:100% auto;color:rgb(0,0,0);font-style:normal;font-weight:normal;margin-bottom:0px;margin-left:auto;margin-right:auto;margin-top:0px;min-height:100%;padding-bottom:0px;padding-left:0px;padding-right:0px;padding-top:0px;text-align:left;text-decoration:none;">
+            <h2><span style="color: rgb(37, 88, 154)">II. Předmět smlouvy</span></h2><ol><li><p>Ode dne nabytí účinnosti této smlouvy Banka na jméno Klienta zřídí a bude vést následující Platební účet:<br></p><div class="table-resizable"><table><tbody><tr><td colspan="1" rowspan="1" colwidth="257"><p>Obchodní název Platebního účtu:</p></td><td colspan="1" rowspan="1"><p><strong>Investiční účet</strong></p></td></tr><tr><td colspan="1" rowspan="1" colwidth="257"><p>Číslo Platebního účtu:</p></td><td colspan="1" rowspan="1"><p><strong>[=bnk[0].accountNumberBban]/[=bnk[0].accountBankCode]</strong></p></td></tr><tr><td colspan="1" rowspan="1" colwidth="257"><p>Měna Platebního účtu:</p></td><td colspan="1" rowspan="1"><p><strong>[=dps[0].currency]</strong></p></td></tr></tbody></table></div><p style="text-align: justify">(dále jen „<strong>Investiční účet</strong>“), ke kterému bude Klientovi poskytovat Finanční služby v souladu s touto smlouvou.</p></li><li><p>Smluvní strany se dohodly, že informace o Platebních transakcích, resp. výpis z Investičního účtu, bude Banka poskytovat Klientovi následujícím způsobem:<br></p><div class="table-resizable"><table><tbody><tr><td colspan="1" rowspan="1" colwidth="257"><p>Perioda:</p></td><td colspan="1" rowspan="1"><p><strong>[=sta[0].frequency]</strong></p></td></tr><tr><td colspan="1" rowspan="1" colwidth="257"><p>Komunikační kanál:</p></td><td colspan="1" rowspan="1"><p><strong>[=sta[0].deliveryMethod]</strong></p></td></tr></tbody></table></div></li><li><p>Zůstatek na Investičním účtu není úročen.</p></li><li><p>Klient se zavazuje hradit Bance poplatky za Finanční služby poskytnuté na základě této smlouvy a případné sankce, na které vznikne Bance nárok dle této smlouvy, a to vše v souladu se Smluvními dokumenty, zejména OP a Sazebníkem.</p></li><li><p>V případě vzniku nepovoleného debetu na Investičním účtu, má Banka právo od této smlouvy odstoupit.</p></li></ol>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div><div class="template-row" style="margin:0 auto;padding:0;">
+        <div class="template-col" style="float:none;height:100%;min-height:100%;width:100%;">
+            <div class="template-col-content" style="background-attachment:scroll;background-color:rgb(255, 255, 255);background-image:none;background-position-x:left;background-position-y:top;background-repeat:no-repeat;background-size:100% auto;color:rgb(0,0,0);font-style:normal;font-weight:normal;margin-bottom:0px;margin-left:auto;margin-right:auto;margin-top:0px;min-height:100%;padding-bottom:0px;padding-left:0px;padding-right:0px;padding-top:0px;text-align:left;text-decoration:none;">
+            <h2><span style="color: rgb(37, 88, 154)">I. Úvodní ustanovení</span></h2><ol><li><p>Na základě této smlouvy Banka na jméno Klienta zřídí a bude vést Platební účet specifikovaný v čl. II této smlouvy a k tomuto Platebnímu účtu bude Klientovi poskytovat související Finanční služby. Platební účet je zřizován za účelem vypořádání obchodů Klienta s investičními nástroji, výplat výnosů investičních nástrojů spravovaných Bankou a úhrady cen a nákladů v souvislosti s poskytováním investičních služeb Klientovi, jakož i k úhradě dalších pohledávek Banky vzniklých v souvislosti s obchody Klienta s investičními nástroj.</p></li></ol>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div><div class="template-row" style="margin:0 auto;padding:0;">
+        <div class="template-col" style="float:none;height:100%;min-height:100%;width:100%;">
+            <div class="template-col-content" style="background-attachment:scroll;background-color:rgb(255, 255, 255);background-image:none;background-position-x:left;background-position-y:top;background-repeat:no-repeat;background-size:100% auto;color:rgb(0,0,0);font-style:normal;font-weight:normal;margin-bottom:0px;margin-left:auto;margin-right:auto;margin-top:0px;min-height:100%;padding-bottom:0px;padding-left:0px;padding-right:0px;padding-top:0px;text-align:left;text-decoration:none;">
+            <h2><span style="color: rgb(37, 88, 154)">II. Předmět smlouvy</span></h2><ol><li><p>Ode dne nabytí účinnosti této smlouvy Banka na jméno Klienta zřídí a bude vést následující Platební účet:<br></p><div class="table-resizable"><table><tbody><tr><td colspan="1" rowspan="1"><p>Obchodní název Platebního účtu:</p></td><td colspan="1" rowspan="1"><p><strong>Investiční účet</strong></p></td></tr><tr><td colspan="1" rowspan="1"><p>Číslo Platebního účtu:</p></td><td colspan="1" rowspan="1"><p><strong>[=bnk[0].accountNumberBban]/[=bnk[0].accountBankCode]</strong></p></td></tr><tr><td colspan="1" rowspan="1"><p>Měna Platebního účtu:</p></td><td colspan="1" rowspan="1"><p><strong>[=dps[0].currency]</strong></p></td></tr></tbody></table></div><p style="text-align: justify">(dále jen „<strong>Investiční účet</strong>“), ke kterému bude Klientovi poskytovat Finanční služby v souladu s touto smlouvou.</p></li><li><p>Smluvní strany se dohodly, že informace o Platebních transakcích, resp. výpis z Investičního účtu, bude Banka poskytovat Klientovi následujícím způsobem:<br></p><div class="table-resizable"><table><tbody><tr><td colspan="1" rowspan="1"><p>Perioda:</p></td><td colspan="1" rowspan="1"><p><strong>[=sta[0].frequency]</strong></p></td></tr><tr><td colspan="1" rowspan="1"><p>Komunikační kanál:</p></td><td colspan="1" rowspan="1"><p><strong>[=sta[0].deliveryMethod]</strong></p></td></tr></tbody></table></div></li><li><p>Zůstatek na Investičním účtu není úročen.</p></li><li><p>Klient se zavazuje hradit Bance poplatky za Finanční služby poskytnuté na základě této smlouvy a případné sankce, na které vznikne Bance nárok dle této smlouvy, a to vše v souladu se Smluvními dokumenty, zejména OP a Sazebníkem.</p></li><li><p>V případě vzniku nepovoleného debetu na Investičním účtu, má Banka právo od této smlouvy odstoupit.</p></li></ol>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div><div class="template-row" style="margin:0 auto;padding:0;">
+        <div class="template-col" style="float:none;height:100%;min-height:100%;width:100%;">
+            <div class="template-col-content" style="background-attachment:scroll;background-color:rgb(255, 255, 255);background-image:none;background-position-x:left;background-position-y:top;background-repeat:no-repeat;background-size:100% auto;color:rgb(0,0,0);font-style:normal;font-weight:normal;margin-bottom:0px;margin-left:auto;margin-right:auto;margin-top:0px;min-height:100%;padding-bottom:0px;padding-left:0px;padding-right:0px;padding-top:0px;text-align:left;text-decoration:none;">
+            <h2><span style="color: rgb(37, 88, 154)">III. Zvláštní ustanovení</span></h2><ol><li><p>K Investičnímu účtu není možné zřídit platební kartu.</p></li><li><p>Zahraniční bezhotovostní platební styk na Investičním účtu není umožněn. Platební příkazy k odchozím transakcím z Investičního účtu v rámci bezhotovostního tuzemského platebního styku je možné podávat pouze osobně na Pobočce, v případě Platebního příkazu ve prospěch jiného Účtu Klienta vedeného v Bance rovněž prostřednictvím Internetového bankovnictví.</p></li><li><p>Banka je oprávněna na vrub Investičního účtu provádět inkaso peněžních prostředků pro účely vypořádání obchodů s investičními nástroji na základě pokynu Klienta podaného v souladu s Rámcovou smlouvou o poskytování investičních služeb (dále jen „<strong>Rámcová smlouva</strong>“), jakož i pro účely úhrady jakýchkoli splatných částek Bance na základě uvedené smlouvy, s čímž Klient souhlasí.</p></li><li><p>Banka bude na Investiční účet připisovat jakékoliv peněžní prostředky ve prospěch Klienta v souvislosti s poskytováním investičních služeb na základě Rámcové smlouvy.</p></li><li><p>Investiční účet není určen pro Platební transakce, které nemají přímou souvislost s předmětem Rámcové smlouvy.</p></li><li><p>Rozsah základních Finančních služeb poskytovaných Bankou v rámci Investičního účtu, úplata za tyto Finanční služby a ostatní Finanční služby poskytované v rámci Investičního účtu, úplata za ně, případně sankce související s Investičním účtem, jsou uvedeny v Sazebníku.</p></li></ol>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div><div class="template-row" style="margin:0 auto;padding:0;">
+        <div class="template-col" style="float:none;height:100%;min-height:100%;width:100%;">
+            <div class="template-col-content" style="background-attachment:scroll;background-color:rgb(255, 255, 255);background-image:none;background-position-x:left;background-position-y:top;background-repeat:no-repeat;background-size:100% auto;color:rgb(0,0,0);font-style:normal;font-weight:normal;margin-bottom:0px;margin-left:auto;margin-right:auto;margin-top:0px;min-height:100%;padding-bottom:0px;padding-left:0px;padding-right:0px;padding-top:0px;text-align:left;text-decoration:none;">
+            <h2><span style="color: rgb(37, 88, 154)">IV. Závěrečná ustanovení</span></h2><ol><li><p>Klient prohlašuje, že mu Banka s dostatečným předstihem před uzavřením této smlouvy poskytla všechny Smluvní dokumenty, jež obsahují údaje a informace, které je Banka povinna Klientovi před uzavřením této smlouvy poskytnout v souladu s příslušnými ustanoveními Občanského zákoníku a ZOPS, rozumí jim a souhlasí s nimi.</p></li><li><p>Tato smlouva</p><ol><li><p>se uzavírá na dobu neurčitou a nabývá účinnosti okamžikem jejího podpisu poslední smluvní stranou;</p></li><li><p>se uzavírá v písemné formě a jakékoliv její změny či doplňky musí mít písemnou formu a musí být podepsané všemi smluvními stranami, kromě případů, kdy k její změně či doplnění došlo na základě změny Smluvních dokumentů z podnětu či z rozhodnutí Banky postupem určeným pro jednotlivé typy Smluvních dokumentů ve VOP;</p></li><li><p>je Klientem podepsána příslušným autorizačním kódem v návaznosti na způsob uzavření této smlouvy;</p></li><li><p>obsahuje úplné ujednání o předmětu této smlouvy a všech náležitostech, které smluvní strany měly a chtěly v této smlouvě ujednat, a které považují za důležité pro závaznost této smlouvy; žádný projev smluvních stran učiněný při jednání o této smlouvě ani projev učiněný po uzavření této smlouvy nesmí být vykládán v rozporu s výslovnými ustanoveními této smlouvy a nezakládá žádný závazek žádné ze smluvních stran.</p></li></ol></li><li><p>Tato smlouva uzavřena Distančním způsobem, z tohoto důvodu má Klient navíc práva uvedená v příslušných ustanoveních VOP, zejména právo na odstoupení od této Rámcové smlouvy v zákonem stanovené lhůtě. <strong>Klient tímto žádá Banku, aby začala plnit své závazky vyplývající z této smlouvy neprodleně po nabytí její účinnosti, tj. ještě před uplynutím zákonné lhůty určené pro odstoupení Klienta od smlouvy</strong>.</p></li><li><p>Smluvní strany prohlašují, že jim je znám obsah této smlouvy, že s ním souhlasí, a že tuto smlouvu uzavírají bez jakéhokoliv nátlaku nebo tísně a na důkaz své svobodné, vážné, určité a pravé vůle stvrzují tuto smlouvu svými podpisy.</p></li></ol>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div><div class="template-row" style="margin:0 auto;padding:0;">
+        <div class="template-col" style="float:left;height:100%;min-height:100%;width:50%;">
+            <div class="template-col-content" style="background-attachment:scroll;background-color:rgb(255, 255, 255);background-image:none;background-position-x:left;background-position-y:top;background-repeat:no-repeat;background-size:100% auto;color:rgb(0,0,0);font-style:normal;font-weight:normal;margin-bottom:0px;margin-left:auto;margin-right:auto;margin-top:0px;min-height:100%;padding-bottom:4px;padding-left:4px;padding-right:4px;padding-top:4px;text-align:left;text-decoration:none;">
+
+<table>
+    <tr>
+        <th colspan="2">
+            Podpis Klient
+        </th>
+    </tr>
+    <tr>
+        <td>
+            Jméno:
+        </td>
+        <td>
+            <strong>[=sig[0].clientFullName]</strong>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Místo:
+        </td>
+        <td>
+            <strong>Internetové bankovnictví</strong>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Datum:
+        </td>
+        <td>
+            <strong>[=sig[0].clientSignatureDate]</strong>
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align: middle;">
+            Podpis:
+        </td>
+        <td style="vertical-align: middle; height: 70px;">
+            <strong>Podepsáno digitálně</strong>
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </div>
+
+        <div class="template-col" style="float:left;height:100%;min-height:100%;width:50%;">
+            <div class="template-col-content" style="background-attachment:scroll;background-color:rgb(255, 255, 255);background-image:none;background-position-x:left;background-position-y:top;background-repeat:no-repeat;background-size:100% auto;color:rgb(0,0,0);font-style:normal;font-weight:normal;margin-bottom:0px;margin-left:auto;margin-right:auto;margin-top:0px;min-height:100%;padding-bottom:4px;padding-left:4px;padding-right:4px;padding-top:4px;text-align:left;text-decoration:none;">
+
+<table>
+    <tr>
+        <th colspan="2">
+            Podpis za Banku
+        </th>
+    </tr>
+    <tr>
+        <td>
+            Pracovník Banky:
+        </td>
+        <td>
+            <strong>Ing. Věra Pavlišová</strong>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Místo:
+        </td>
+        <td>
+            <strong>Olomouc</strong>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Datum:
+        </td>
+        <td>
+            <strong>[=sig[0].employeeSignatureDate]</strong>
+        </td>
+    </tr>
+    <tr>
+        <td style="vertical-align: middle;">
+            Podpis:
+        </td>
+        <td>
+            <img style="height: 90px;" src="data:image/png;base64,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" alt="Podpis">
+        </td>
+    </tr>
+</table>
+
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div><div id="footer" class="footer text-gray">
+    Banka CREDITAS a.s., Sokolovská 675/9, Karlín, 186 00 Praha 8<br />
+    OR: Městský soud v Praze, oddíl B, vložka 23903, IČO: 63492555, DIČ: CZ63492555<br />
+    Volejte zdarma: <a href="tel:+420800888009">800 888 009</a>, e-mail: <a href="mailto:info@creditas.cz">info@creditas.cz</a>, <a href="https://www.creditas.cz" target="_blank">www.creditas.cz</a><br />
+</div>
+</div>
+</body>
+</html>
