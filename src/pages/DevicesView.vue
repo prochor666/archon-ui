@@ -121,7 +121,7 @@
 </template>
 
 <script setup>
-import { reactive, watch } from 'vue';
+import { reactive } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { metaFind } from '../composables/navs';
 import { listDevices } from '../composables/useDevices';
@@ -157,10 +157,6 @@ setTimeout(async () => {
     result.devices = (await listDevices()) || [];
     result.loading = false;
 }, 400);
-
-watch(result, (r) => {
-    console.log('DevicesView.vue watch result', r);
-});
 
 const headMeta = metaFind(route.name);
 </script>

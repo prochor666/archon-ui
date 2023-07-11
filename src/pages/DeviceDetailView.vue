@@ -116,7 +116,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="space-y-2">
+                        <div v-if="device.data._id.length > 1" class="space-y-2">
 
                             <h2 class="pt-4 font-medium px-1 sm:p-4 select-none">{{ t('deviceSettings') }}</h2>
 
@@ -245,7 +245,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="fixed bottom-0 w-full md:static sm:col-span-2 select-none">
+                    <div v-if="result.loading === false" class="fixed bottom-0 w-full md:static sm:col-span-2 select-none">
                         <div class="www py-2 px-1 sm:p-4 text-center">
                             <button
                                 class="bg-gray-200 border border-transparent rounded shadow-sm py-2 px-4 mr-4 inline-flex justify-center text-base font-medium text-gray-600 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
@@ -256,6 +256,7 @@
                             </button>
 
                             <button
+                                v-if="device.data._id.length > 1"
                                 class="border border-transparent rounded shadow-sm py-2 px-4 mr-4 inline-flex justify-center text-base font-medium text-white"
                                 :class="
                                     result.canSave === true
@@ -272,6 +273,7 @@
                             </button>
 
                             <button
+                                v-if="device.data._id.length > 1"
                                 class="border border-transparent rounded shadow-sm py-2 px-4 mr-4 inline-flex justify-center text-base font-medium text-white"
                                 :class="
                                     result.canSave === true
@@ -378,17 +380,6 @@ const result = reactive({
 
 const deviceTypes = ['arm', 'x86'];
 
-const saveActions = [
-  { name: t('buttonSave'), callBack: () => {
-    saving.active = true;
-    sendDeviceData();
-  },},
-  { name: t('buttonSaveAndClose'), callBack: () => {
-    saving.active = true;
-    sendDeviceData();
-  },},
-]
-
 if (!route.params.deviceid) {
     result.loading = false;
 } else {
@@ -402,6 +393,7 @@ const getDeviceData = async () => {
     device.data = await getDevice(deviceid);
     result.loading = false;
     saving.active = false;
+    //console.log('DeviceDetailView.vue device', device);
     if (typeof device.data !== 'object' || Object.keys(device.data).length === 0) {
         router.push({ name: 'page-404' });
     }
@@ -423,7 +415,7 @@ const sendDeviceData = async (andClose = false) => {
             },
             2500,
         );
-        console.log('DeviceDetailView.vue ok save result', result);
+        //console.log('DeviceDetailView.vue ok save result', result);
         saving.active = false;
         if (andClose === true) {
             router.push({ name: 'devices' });
