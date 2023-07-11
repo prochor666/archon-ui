@@ -13,7 +13,6 @@ export const listDevices = async (filter = {}) => {
     if (!res.status || !res.devices) {
         return [];
     }
-
     //console.log('useDevices.js: listDevices', res);
     return res.devices;
 };
@@ -29,31 +28,7 @@ export const getDevice = async (id) => {
                 method: 'get',
             })) || {};
     }
-
-    if (!res.device) {
-        res.device = {
-            id: '0',
-        };
-    } else {
-        if (!res.device.mac || typeof res.device.mac !== 'string') {
-            res.device.mac = '';
-        }
-        if (!res.device.ip || typeof res.device.ip !== 'string') {
-            res.device.ip = '';
-        }
-        if (!res.device.ip_type || typeof res.device.ip_type !== 'string') {
-            res.device.ip_type = '';
-        }
-        if (!res.device.name || typeof res.device.name !== 'string') {
-            res.device.name = '';
-        }
-        if (!res.device.id || typeof res.device.id !== 'string') {
-            res.device.id = '0';
-        }
-    }
-
     //console.log('useDevices.js: getDevice', res.device);
-
     return res.device;
 };
 
@@ -73,8 +48,7 @@ export const saveDevice = async (data, saving = {}) => {
         method: method,
         data: data,
     });
-
-    console.log('useDevices.js: saveDevice', res);
+    //console.log('useDevices.js: saveDevice', res);
     saving.active = false;
     return res;
 };

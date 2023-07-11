@@ -22,6 +22,7 @@ import Settings from './pages/SettingsView.vue';
 import Login from './pages/LoginView.vue';
 import Activate from './pages/ActivateView.vue';
 import UITest from './pages/UITestView.vue';
+import CodeBlock from 'vue3-code-block';
 import './index.css';
 
 const config = load();
@@ -54,7 +55,7 @@ const routes = [
         meta: { requiredRoles: config.roles.editors },
     },
     {
-        path: '/device:deviceid?',
+        path: '/device/:deviceid?',
         component: DeviceDetail,
         name: 'device',
         meta: { requiredRoles: config.roles.editors },
@@ -143,6 +144,7 @@ router.beforeEach(async (to) => {
     // Continue, when everything is ok
     if (loggedIn.status === true && loggedUser.role !== 'none') {
         if (routeAllowed === true) {
+            keeper('returnUrl', to.path);
             return true;
         }
 
@@ -161,7 +163,8 @@ router.beforeEach(async (to) => {
     return '/login';
 });
 
-const app = createApp(App);
+const app = createApp(App)
+    .component('CodeBlock', CodeBlock);
 
 app.config.globalProperties.$dayjs = dayjs;
 app.config.globalProperties.t = t;

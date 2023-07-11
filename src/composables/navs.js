@@ -19,7 +19,7 @@ export const metaFind = (routeName) => {
 };
 
 const addTitleSuffix = (str) => {
-    return `${str} &#128640 Archon UI`;
+    return `${str} | Archon Galaxy &#127756;`;
 };
 
 export const meta = [

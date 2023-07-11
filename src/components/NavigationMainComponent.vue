@@ -274,7 +274,7 @@ const navigation = {
             name: 'devices',
             href: '/devices',
             icon: MdiChip,
-            matchRoutes: ['devices'],
+            matchRoutes: ['devices', 'device'],
         },
         {
             title: 'Sites',

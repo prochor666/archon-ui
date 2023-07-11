@@ -25,7 +25,7 @@
                                     autocomplete="off"
                                     class="mt-1 block w-full border rounded shadow-sm py-1 px-2 md:py-2 md:px-3 focus:outline-none text-sm sm:text-sm"
                                     :class="
-                                        user.data.username.length === 0
+                                        ark(user.data, 'username', '').length === 0
                                             ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
                                             : 'border-gray-300 focus:ring-indigo-500 focus:border-indigo-500'
                                     "
@@ -63,7 +63,7 @@
                                     autocomplete="off"
                                     class="mt-1 block w-full border rounded shadow-sm py-1 px-2 md:py-2 md:px-3 focus:outline-none text-sm sm:text-sm"
                                     :class="
-                                        user.data.firstname.length === 0
+                                        ark(user.data, 'firstname', '').length === 0
                                             ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
                                             : 'border-gray-300 focus:ring-indigo-500 focus:border-indigo-500'
                                     "
@@ -82,7 +82,7 @@
                                     autocomplete="off"
                                     class="mt-1 block w-full border rounded shadow-sm py-1 px-2 md:py-2 md:px-3 focus:outline-none text-sm sm:text-sm"
                                     :class="
-                                        user.data.lastname.length === 0
+                                        ark(user.data, 'lastname', '').length === 0
                                             ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
                                             : 'border-gray-300 focus:ring-indigo-500 focus:border-indigo-500'
                                     "
@@ -125,7 +125,7 @@
                             <div class="fixed bottom-0 w-full md:static sm:col-span-2 select-none">
                                 <div class="www py-2 px-1 sm:p-4 text-center">
                                     <button
-                                        class="bg-gray-200 border border-transparent rounded shadow-sm py-2 px-4 mr-4 inline-flex justify-center text-base font-medium text-gray-600 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                        class="bg-gray-200 border border-transparent rounded shadow-sm py-2 px-4 mr-4 inline-flex justify-center text-base font-medium text-gray-600 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
                                         @click="router.push({ name: 'users' })"
                                     >
                                         <MdiChevronLeft class="w-6 h-6 mr-2" />
@@ -183,7 +183,7 @@ import { getLoggedUser } from '../composables/useAuth';
 import { getUser, saveUser } from '../composables/useUsers';
 //import { notify } from 'notiwind';
 import { load } from '../composables/useConfig';
-import { validateEmail } from '../composables/utils';
+import { ark, validateEmail } from '../composables/utils';
 import { t } from '../composables/i18n';
 import Breadcrumbs from '../components/BreadcrumbsComponent.vue';
 import Headify from '../components/HeadifyComponent.vue';
@@ -227,6 +227,9 @@ if (!route.params.userid) {
     setTimeout(async () => {
         user.data = (await getUser(userid)) || {};
         result.loading = false;
+        if (typeof user.data !== 'object' || Object.keys(user.data).length === 0) {
+            router.push({ name: 'page-404' });
+        }
     }, 400);
 }
 

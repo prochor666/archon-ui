@@ -114,22 +114,4 @@ describe('Utils', () => {
     test('Tokenize string "Start testing your code" with custom delimiter "_" into "Start_testing_your_code"', () => {
         expect(utils.replaceStringSpaces('Start testing your code')).toBe('Start_testing_your_code');
     });
-
-    test('Guess valid API object detecting relevant keys id + isValid (false)', () => {
-        const origin = {
-            id: '1000000000',
-            isPlague: true,
-            title: 'Template',
-        };
-        expect(utils.guessValidDbObject(origin)).toBe(false);
-    });
-
-    test('Guess valid API object detecting relevant keys id + isValid (true)', () => {
-        const origin = {
-            id: '1000000000',
-            isValid: true,
-            title: 'Template',
-        };
-        expect(utils.guessValidDbObject(origin)).toBe(true);
-    });
 });

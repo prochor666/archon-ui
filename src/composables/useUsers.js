@@ -29,14 +29,6 @@ export const getUser = async (id) => {
                 method: 'get',
             })) || {};
     }
-
-    if (!res.user) {
-        res.user = {
-            id: '0',
-            role: 'none',
-        };
-    }
-
     //console.log('useUsers.js: getUser', res.user);
 
     return res.user;
