@@ -3,7 +3,9 @@
 
     <div>
         <!-- Navbar -->
-        <NavigationMain />
+        <KeepAlive>
+            <NavigationMain />
+        </KeepAlive>
 
         <div class="lg:pl-72">
             <main>

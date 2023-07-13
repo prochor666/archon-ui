@@ -1,13 +1,7 @@
 import { t } from './i18n';
 
-export const currentRouteMatch = (item, routeName) => {
-    for (let m in item.matchRoutes) {
-        if (routeName === item.matchRoutes[m]) {
-            return true;
-        }
-    }
-
-    return false;
+export const currentRouteMatch = (matchRoutes, routeName) => {
+    return matchRoutes.includes(routeName);
 };
 
 export const metaFind = (routeName) => {

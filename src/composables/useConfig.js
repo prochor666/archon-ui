@@ -8,7 +8,7 @@ export const load = () => {
         logLevel: ['console'], // 'console', 'log'
         roles: {
             any: [],
-            all: ['none', 'user', 'editor', 'admin'],
+            all: ['none', 'block', 'user', 'editor', 'admin'],
             logged: ['user', 'editor', 'admin'],
             editors: ['editor', 'admin'],
             admins: ['admin'],

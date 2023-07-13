@@ -70,7 +70,7 @@ const routes = [
         path: '/user/:userid?',
         component: UserDetail,
         name: 'user',
-        meta: { requiredRoles: config.roles.admin },
+        meta: { requiredRoles: config.roles.admins },
     },
     {
         path: '/me',
@@ -120,7 +120,6 @@ if (location !== parent.location) {
     parent.location.href = 'https://www.google.com';
 }
 
-//router.beforeEach(async (to, from) => {
 router.beforeEach(async (to) => {
     //console.clear();
     const requiredRoles = to.meta.requiredRoles || [];
@@ -153,11 +152,12 @@ router.beforeEach(async (to) => {
                 group: 'warning',
                 title: `${t('Sorry')}`,
                 //text: `Sorry, you have no permission for ${to.path}`,
-                text: `${t('No permission', { path: to.name })}`,
+                text: `${t('NoPermission', { path: to.path })}`,
             },
             5000,
         );
         return false;
+        //return false;
     }
 
     return '/login';

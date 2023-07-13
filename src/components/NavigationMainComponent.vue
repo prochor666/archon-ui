@@ -50,10 +50,10 @@
                                     <li>
                                         <ul role="list" class="-mx-2 space-y-1">
                                             <li v-for="item in navigation.main" :key="item.name">
-                                                <router-link
-                                                    :to="item.href"
+                                                <a
+                                                    :href="item.href"
                                                     :class="[
-                                                        currentRouteMatch(item, route.name)
+                                                        item.active
                                                             ? 'bg-gray-800 text-white'
                                                             : 'text-gray-400 hover:text-white hover:bg-gray-800',
                                                         'group flex gap-x-3 rounded p-2 text-sm leading-6 font-semibold',
@@ -61,7 +61,7 @@
                                                 >
                                                     <component :is="item.icon" class="h-6 w-6 shrink-0" aria-hidden="true" />
                                                     {{ t(item.title) }}
-                                                </router-link>
+                                                </a>
                                             </li>
                                         </ul>
                                     </li>
@@ -69,10 +69,10 @@
                                         <div class="text-xs font-semibold leading-6 text-gray-400">Your network</div>
                                         <ul role="list" class="-mx-2 mt-2 space-y-1">
                                             <li v-for="item in navigation.user" :key="item.name">
-                                                <router-link
-                                                    :to="item.href"
+                                                <a
+                                                    :href="item.href"
                                                     :class="[
-                                                        currentRouteMatch(item, route.name)
+                                                        item.active
                                                             ? 'bg-gray-800 text-white'
                                                             : 'text-gray-400 hover:text-white hover:bg-gray-800',
                                                         'group flex gap-x-3 rounded p-2 text-sm leading-6 font-semibold',
@@ -80,7 +80,7 @@
                                                 >
                                                     <component :is="item.icon" class="h-6 w-6 shrink-0" aria-hidden="true" />
                                                     {{ t(item.title) }}
-                                                </router-link>
+                                                </a>
                                             </li>
                                         </ul>
                                     </li>
@@ -118,7 +118,7 @@
                                 <router-link
                                     :to="item.href"
                                     :class="[
-                                        currentRouteMatch(item, route.name)
+                                        item.active
                                             ? 'bg-gray-800 text-white'
                                             : 'text-gray-400 hover:text-white hover:bg-gray-800',
                                         'group flex gap-x-3 rounded p-2 text-sm leading-6 font-semibold',
@@ -137,7 +137,7 @@
                                 <router-link
                                     :to="item.href"
                                     :class="[
-                                        currentRouteMatch(item, route.name)
+                                        item.active
                                             ? 'bg-gray-800 text-white'
                                             : 'text-gray-400 hover:text-white hover:bg-gray-800',
                                         'group flex gap-x-3 rounded p-2 text-sm leading-6 font-semibold',
@@ -234,31 +234,31 @@ const state = reactive({
         toolbar: true,
         data: {},
     }),
-    route = useRoute(),
-    router = useRouter();
+    router = useRouter(),
+    route = useRoute();
 
-const navigation = {
+const navigation = reactive({
     main: [
         {
             title: 'Dashboard',
             name: 'dashboard',
             href: '/',
             icon: MdiHome,
-            matchRoutes: ['dashboard'],
+            active: currentRouteMatch(['dashboard'], route.name),
         },
         {
             title: 'Users',
             name: 'users',
             href: '/users',
             icon: MdiAccountGroup,
-            matchRoutes: ['users', 'user'],
+            active: currentRouteMatch(['users', 'user'], route.name),
         },
         {
             title: 'UITest',
             name: 'ui-test',
             href: '/ui-test',
             icon: MdiFileDocumentOutline,
-            matchRoutes: ['ui-test'],
+            active: currentRouteMatch(['ui-test'], route.name),
         },
     ],
     user: [
@@ -267,31 +267,31 @@ const navigation = {
             name: 'me',
             href: '/me',
             icon: MdiAccount,
-            matchRoutes: ['me'],
+            active: currentRouteMatch(['me'], route.name),
         },
         {
             title: 'Devices',
             name: 'devices',
             href: '/devices',
             icon: MdiChip,
-            matchRoutes: ['devices', 'device'],
+            active: currentRouteMatch(['devices', 'device'], route.name),
         },
         {
             title: 'Sites',
             name: 'sites',
             href: '/sites',
             icon: MdiWeb,
-            matchRoutes: ['sites'],
+            active: currentRouteMatch(['sites'], route.name),
         },
         {
             title: 'Settings',
             name: 'settings',
             href: '/settings',
             icon: MdiCog,
-            matchRoutes: ['settings'],
+            active: currentRouteMatch(['settings'], route.name),
         },
     ],
-};
+});
 
 const logoutSession = async () => {
     const lg = await logout();

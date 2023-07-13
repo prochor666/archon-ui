@@ -3,7 +3,9 @@
 
     <div>
         <!-- Navbar -->
-        <NavigationMain />
+        <KeepAlive>
+            <NavigationMain />
+        </KeepAlive>
 
         <div class="lg:pl-72">
             <main>
@@ -163,7 +165,7 @@ import { metaFind } from '../composables/navs';
 import { getLoggedUser } from '../composables/useAuth';
 import { getUser, saveUser } from '../composables/useUsers';
 //import { notify } from 'notiwind';
-import { ark, validateEmail } from '../composables/utils';
+import { ark, validateEmail, getRndKey } from '../composables/utils';
 import { t } from '../composables/i18n';
 import Breadcrumbs from '../components/BreadcrumbsComponent.vue';
 import Headify from '../components/HeadifyComponent.vue';
@@ -171,10 +173,10 @@ import NavigationMain from '../components/NavigationMainComponent.vue';
 import Spinner from '../components/SpinnerComponent.vue';
 import { MdiContentSave, MdiChevronLeft } from 'materialdesignicons-vue3/icons/';
 
-const loggedUser = await getLoggedUser();
-
 const route = useRoute();
 let userid = '0';
+
+const loggedUser = await getLoggedUser();
 
 if (loggedUser.id.toString().length > 0) {
     userid = loggedUser.id;
@@ -197,10 +199,14 @@ const result = reactive({
     emailIsValid: false,
 });
 
-setTimeout(async () => {
-    user.data = (await getUser(userid)) || {};
+if (userid === '0') {
     result.loading = false;
-}, 400);
+} else {
+    setTimeout(async () => {
+        user.data = (await getUser(userid));
+        result.loading = false;
+    }, 400);
+}
 
 const router = useRouter(),
     saving = reactive({
@@ -221,10 +227,10 @@ const breadcrumbsLinks = reactive([
 
 watch(user, (r) => {
     validateUserData();
-    if (user.data._id === '0' && loggedUser.role !== 'admin') {
+/*     if (user.data._id === '0' && loggedUser.role !== 'admin') {
         router.push('/');
-    }
-    console.log('UserDetailView.vue watch result', r);
+    } */
+    console.log('MeView.vue watch result', r);
 });
 
 const validateUserData = () => {
@@ -233,8 +239,6 @@ const validateUserData = () => {
     result.canSave =
         result.emailIsValid === true && user.data.firstname.length > 0 && user.data.lastname.length > 0 && user.data.username.length > 0;
 };
-
-validateUserData();
 
 const headMeta = metaFind(route.name);
 </script>
