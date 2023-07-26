@@ -1,6 +1,8 @@
 <template>
     <NotificationGroup group="error">
-        <div class="fixed top-0 right-0 max-w-sm min-w-[200px] h-0 flex items-start justify-end p-2 select-none z-[7020]">
+        <div
+            class="fixed top-0 right-0 max-w-sm min-w-[200px] h-0 flex items-start justify-end p-2 select-none z-[7020]"
+        >
             <div class="w-full max-w-sm">
                 <Notification
                     v-slot="{ notifications, close }"
@@ -24,14 +26,19 @@
 
                         <div class="px-4 py-2">
                             <div class="mr-2">
-                                <span class="font-semibold text-white">{{ notification.title }}</span>
+                                <span class="font-semibold text-white">{{
+                                    notification.title
+                                }}</span>
                                 <p class="text-sm text-white">
                                     {{ notification.text }}
                                 </p>
                             </div>
                         </div>
 
-                        <button class="absolute top-1 right-0 px-1 pt-1 cursor-pointer z-2000" @click="close(notification.id)">
+                        <button
+                            class="absolute top-1 right-0 px-1 pt-1 cursor-pointer z-2000"
+                            @click="close(notification.id)"
+                        >
                             <MdiClose class="mx-1 h-5 w-5 text-white" />
                         </button>
                     </div>
@@ -41,7 +48,9 @@
     </NotificationGroup>
 
     <NotificationGroup group="warning">
-        <div class="fixed top-0 right-0 max-w-sm min-w-[200px] h-0 flex items-start justify-end p-2 select-none z-[7020]">
+        <div
+            class="fixed top-0 right-0 max-w-sm min-w-[200px] h-0 flex items-start justify-end p-2 select-none z-[7020]"
+        >
             <div class="w-full max-w-sm">
                 <Notification
                     v-slot="{ notifications, close }"
@@ -65,14 +74,19 @@
 
                         <div class="px-4 py-2">
                             <div class="mr-2">
-                                <span class="font-semibold text-white">{{ notification.title }}</span>
+                                <span class="font-semibold text-white">{{
+                                    notification.title
+                                }}</span>
                                 <p class="text-sm text-white">
                                     {{ notification.text }}
                                 </p>
                             </div>
                         </div>
 
-                        <button class="absolute top-1 right-0 px-1 pt-1 cursor-pointer z-2000" @click="close(notification.id)">
+                        <button
+                            class="absolute top-1 right-0 px-1 pt-1 cursor-pointer z-2000"
+                            @click="close(notification.id)"
+                        >
                             <MdiClose class="mx-1 h-5 w-5 text-white" />
                         </button>
                     </div>
@@ -82,7 +96,9 @@
     </NotificationGroup>
 
     <NotificationGroup group="success">
-        <div class="fixed top-0 right-0 max-w-sm min-w-[200px] h-0 flex items-start justify-end p-2 select-none z-[7020]">
+        <div
+            class="fixed top-0 right-0 max-w-sm min-w-[200px] h-0 flex items-start justify-end p-2 select-none z-[7020]"
+        >
             <div class="w-full max-w-sm">
                 <Notification
                     v-slot="{ notifications, close }"
@@ -106,14 +122,19 @@
 
                         <div class="px-4 py-2">
                             <div class="mr-2">
-                                <span class="font-semibold text-white">{{ notification.title }}</span>
+                                <span class="font-semibold text-white">{{
+                                    notification.title
+                                }}</span>
                                 <p class="text-sm text-white">
                                     {{ notification.text }}
                                 </p>
                             </div>
                         </div>
 
-                        <button class="absolute top-1 right-0 px-1 pt-1 cursor-pointer z-2000" @click="close(notification.id)">
+                        <button
+                            class="absolute top-1 right-0 px-1 pt-1 cursor-pointer z-2000"
+                            @click="close(notification.id)"
+                        >
                             <MdiClose class="mx-1 h-5 w-5 text-white" />
                         </button>
                     </div>
@@ -123,7 +144,9 @@
     </NotificationGroup>
 
     <NotificationGroup group="info">
-        <div class="fixed top-0 right-0 max-w-sm min-w-[200px] h-0 flex items-start justify-end p-2 select-none z-[7020]">
+        <div
+            class="fixed top-0 right-0 max-w-sm min-w-[200px] h-0 flex items-start justify-end p-2 select-none z-[7020]"
+        >
             <div class="w-full max-w-sm">
                 <Notification
                     v-slot="{ notifications, close }"
@@ -147,14 +170,19 @@
 
                         <div class="px-4 py-2">
                             <div class="mr-2">
-                                <span class="font-semibold text-white">{{ notification.title }}</span>
+                                <span class="font-semibold text-white">{{
+                                    notification.title
+                                }}</span>
                                 <p class="text-sm text-white">
                                     {{ notification.text }}
                                 </p>
                             </div>
                         </div>
 
-                        <button class="absolute top-1 right-0 px-1 pt-1 cursor-pointer z-2000" @click="close(notification.id)">
+                        <button
+                            class="absolute top-1 right-0 px-1 pt-1 cursor-pointer z-2000"
+                            @click="close(notification.id)"
+                        >
                             <MdiClose class="mx-1 h-5 w-5 text-white" />
                         </button>
                     </div>

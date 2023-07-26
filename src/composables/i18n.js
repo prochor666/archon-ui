@@ -18,7 +18,9 @@ export const langConfig = {
 };
 
 export const getLang = () => {
-    return lang in langRepository ? langRepository[lang]().all : langRepository[langConfig.defaultLang]().all;
+    return lang in langRepository
+        ? langRepository[lang]().all
+        : langRepository[langConfig.defaultLang]().all;
 };
 
 export const t = (token, options = {}) => {
@@ -85,7 +87,9 @@ export const expandStackedItem = (parsed, options) => {
 export const conditionDetector = (str) => {
     const conditionStart = str.indexOf(langConfig.leftBracket),
         conditionEnd =
-            str.indexOf(langConfig.rightBracket) > -1 ? str.indexOf(langConfig.rightBracket) + 1 : str.indexOf(langConfig.rightBracket),
+            str.indexOf(langConfig.rightBracket) > -1
+                ? str.indexOf(langConfig.rightBracket) + 1
+                : str.indexOf(langConfig.rightBracket),
         result = {
             evalStart: 0,
             evalEnd: -1,

@@ -4,8 +4,8 @@
     <div>
         <!-- Navbar -->
         <KeepAlive>
-    <NavigationMain />
-</KeepAlive>
+            <NavigationMain />
+        </KeepAlive>
 
         <div class="lg:pl-72">
             <main>
@@ -13,10 +13,16 @@
                     <!-- Your content -->
                     <Breadcrumbs :links="breadcrumbsLinks" class="pl-2 lg:pl-6 xl:pl-10 pr-4" />
 
-                    <div v-if="result.loading === false" class="mx-auto max-w-2xl px-2 py-4 space-y-6">
+                    <div
+                        v-if="result.loading === false"
+                        class="mx-auto max-w-2xl px-2 py-4 space-y-6"
+                    >
                         <div class="sm:grid sm:grid-cols-2 sm:gap-x-2">
                             <div class="www py-2 px-1 sm:p-4">
-                                <label for="first-name" class="block text-sm font-medium text-gray-700">
+                                <label
+                                    for="first-name"
+                                    class="block text-sm font-medium text-gray-700"
+                                >
                                     {{ t('username') }}
                                 </label>
                                 <input
@@ -35,7 +41,10 @@
                             </div>
 
                             <div class="www py-2 px-1 sm:p-4">
-                                <label for="email-address" class="block text-sm font-medium text-gray-700">
+                                <label
+                                    for="email-address"
+                                    class="block text-sm font-medium text-gray-700"
+                                >
                                     {{ t('email') }}
                                 </label>
                                 <input
@@ -54,7 +63,10 @@
                             </div>
 
                             <div class="www py-2 px-1 sm:p-4">
-                                <label for="first-name" class="block text-sm font-medium text-gray-700">
+                                <label
+                                    for="first-name"
+                                    class="block text-sm font-medium text-gray-700"
+                                >
                                     {{ t('firstname') }}
                                 </label>
                                 <input
@@ -73,7 +85,10 @@
                             </div>
 
                             <div class="www py-2 px-1 sm:p-4">
-                                <label for="last-name" class="block text-sm font-medium text-gray-700">
+                                <label
+                                    for="last-name"
+                                    class="block text-sm font-medium text-gray-700"
+                                >
                                     {{ t('lastname') }}
                                 </label>
                                 <input
@@ -94,7 +109,10 @@
                             <div class="block py-4 sm:py-0">
                                 <div v-if="result.canSetRole">
                                     <div class="www py-2 px-1 sm:p-4">
-                                        <label for="role" class="block text-sm font-medium text-gray-700">
+                                        <label
+                                            for="role"
+                                            class="block text-sm font-medium text-gray-700"
+                                        >
                                             {{ t('role') }}
                                         </label>
                                         <select
@@ -113,7 +131,10 @@
 
                                 <div v-if="result.canSetRole === false">
                                     <div class="www py-2 px-1 sm:p-4 select-none">
-                                        <label for="role" class="block text-sm font-medium text-gray-700">
+                                        <label
+                                            for="role"
+                                            class="block text-sm font-medium text-gray-700"
+                                        >
                                             {{ t('role') }}
                                         </label>
                                         <p
@@ -245,9 +266,15 @@ watch(user, (r) => {
 
 const validateUserData = () => {
     result.emailIsValid = validateEmail(user.data.email);
-    result.canSetRole = user.data._id !== '0' && user.data._id !== loggedUser.id && loggedUser.role === 'admin' ? true : false;
+    result.canSetRole =
+        user.data._id !== '0' && user.data._id !== loggedUser.id && loggedUser.role === 'admin'
+            ? true
+            : false;
     result.canSave =
-        result.emailIsValid === true && user.data.firstname.length > 0 && user.data.lastname.length > 0 && user.data.username.length > 0;
+        result.emailIsValid === true &&
+        user.data.firstname.length > 0 &&
+        user.data.lastname.length > 0 &&
+        user.data.username.length > 0;
 };
 
 validateUserData();

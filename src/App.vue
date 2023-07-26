@@ -36,8 +36,8 @@ import { ref } from 'vue';
 import Spinner from './components/SpinnerComponent.vue';
 import Toasts from './components/ToastsComponent.vue';
 import WorkerIndicator from './components/WorkerIndicatorComponent.vue';
-import { keeper, getRndKey } from './composables/utils';
-import refreshWorker from './refresh.worker.js?worker';
+import { getRndKey } from './composables/utils';
+//import refreshWorker from './refresh.worker.js?worker';
 
 const workerIndicator = ref(false);
 const domKey = ref(`a-${getRndKey()}`);

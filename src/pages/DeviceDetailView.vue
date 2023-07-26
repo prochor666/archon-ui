@@ -13,14 +13,21 @@
                     <!-- Your content -->
                     <Breadcrumbs :links="breadcrumbsLinks" class="pl-2 lg:pl-6 xl:pl-10 pr-4" />
 
-                    <div v-if="result.loading === false" class="sm:grid sm:grid-cols-2 sm:gap-2 pl-1 lg:pl-4 xl:pl-8 pr-4">
+                    <div
+                        v-if="result.loading === false"
+                        class="sm:grid sm:grid-cols-2 sm:gap-2 pl-1 lg:pl-4 xl:pl-8 pr-4"
+                    >
                         <div class="space-y-2">
-
-                            <h2 class="pt-4 font-medium px-1 sm:p-4 select-none">{{ t('deviceBasics') }}</h2>
+                            <h2 class="pt-4 font-medium px-1 sm:p-4 select-none">
+                                {{ t('deviceBasics') }}
+                            </h2>
 
                             <div class="sm:grid sm:grid-cols-2 sm:gap-x-2">
                                 <div class="www py-2 px-1 sm:p-4">
-                                    <label for="device-name" class="block text-sm font-medium text-gray-700 select-none">
+                                    <label
+                                        for="device-name"
+                                        class="block text-sm font-medium text-gray-700 select-none"
+                                    >
                                         {{ t('deviceName') }}
                                     </label>
                                     <input
@@ -39,7 +46,10 @@
                                 </div>
 
                                 <div class="www py-2 px-1 sm:p-4">
-                                    <label for="mac-address" class="block text-sm font-medium text-gray-700 select-none">
+                                    <label
+                                        for="mac-address"
+                                        class="block text-sm font-medium text-gray-700 select-none"
+                                    >
                                         {{ t('deviceMAC') }}
                                     </label>
                                     <input
@@ -58,7 +68,10 @@
                                 </div>
 
                                 <div class="www py-2 px-1 sm:p-4">
-                                    <label for="device-ip" class="block text-sm font-medium text-gray-700 select-none">
+                                    <label
+                                        for="device-ip"
+                                        class="block text-sm font-medium text-gray-700 select-none"
+                                    >
                                         {{ t('deviceIp') }}
                                     </label>
                                     <input
@@ -72,7 +85,10 @@
                                 </div>
 
                                 <div class="www py-2 px-1 sm:p-4">
-                                    <label for="device-description" class="block text-sm font-medium text-gray-700 select-none">
+                                    <label
+                                        for="device-description"
+                                        class="block text-sm font-medium text-gray-700 select-none"
+                                    >
                                         {{ t('deviceDescription') }}
                                     </label>
                                     <input
@@ -86,7 +102,10 @@
                                 </div>
 
                                 <div class="www py-2 px-1 sm:p-4">
-                                    <label for="device-content" class="block text-sm font-medium text-gray-700 select-none">
+                                    <label
+                                        for="device-content"
+                                        class="block text-sm font-medium text-gray-700 select-none"
+                                    >
                                         {{ t('deviceContent') }}
                                     </label>
                                     <input
@@ -101,7 +120,10 @@
 
                                 <div class="block py-4 sm:py-0">
                                     <div class="www py-2 px-1 sm:p-4">
-                                        <label for="role" class="block text-sm font-medium text-gray-700 select-none">
+                                        <label
+                                            for="role"
+                                            class="block text-sm font-medium text-gray-700 select-none"
+                                        >
                                             {{ t('deviceType') }}
                                         </label>
                                         <select
@@ -110,7 +132,10 @@
                                             name="role"
                                             class="mt-1 block w-full bg-white border border-gray-300 rounded py-1 px-2 md:py-2 md:px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-sm sm:text-sm"
                                         >
-                                            <option v-for="deviceType in deviceTypes" :key="deviceType">
+                                            <option
+                                                v-for="deviceType in deviceTypes"
+                                                :key="deviceType"
+                                            >
                                                 {{ deviceType }}
                                             </option>
                                         </select>
@@ -119,12 +144,16 @@
                             </div>
                         </div>
                         <div v-if="device.data._id.length > 1" class="space-y-2">
-
-                            <h2 class="pt-4 font-medium px-1 sm:p-4 select-none">{{ t('deviceSettings') }}</h2>
+                            <h2 class="pt-4 font-medium px-1 sm:p-4 select-none">
+                                {{ t('deviceSettings') }}
+                            </h2>
 
                             <div class="sm:grid sm:grid-cols-2 sm:gap-x-2">
                                 <div class="www py-2 px-1 sm:p-4">
-                                    <label for="device-settings-content-path" class="block text-sm font-medium text-gray-700 select-none">
+                                    <label
+                                        for="device-settings-content-path"
+                                        class="block text-sm font-medium text-gray-700 select-none"
+                                    >
                                         {{ t('deviceSettingsContentPath') }}
                                     </label>
                                     <input
@@ -135,14 +164,18 @@
                                         autocomplete="off"
                                         class="mt-1 block w-full border rounded shadow-sm py-1 px-2 md:py-2 md:px-3 focus:outline-none text-sm sm:text-sm"
                                         :class="
-                                            ark(device.data.settings, 'contentPath', '').length === 0
+                                            ark(device.data.settings, 'contentPath', '').length ===
+                                            0
                                                 ? 'border-red-300 focus:ring-red-500 focus:border-red-500'
                                                 : 'border-gray-300 focus:ring-indigo-500 focus:border-indigo-500'
                                         "
                                     />
                                 </div>
                                 <div class="www py-2 px-1 sm:p-4">
-                                    <label for="device-settings-pin" class="block text-sm font-medium text-gray-700 select-none">
+                                    <label
+                                        for="device-settings-pin"
+                                        class="block text-sm font-medium text-gray-700 select-none"
+                                    >
                                         {{ t('deviceSettingsPIN') }}
                                     </label>
                                     <input
@@ -161,10 +194,29 @@
                                 </div>
                                 <div class="www py-2 px-1 sm:p-4">
                                     <SwitchGroup as="div" class="flex items-center mt-6">
-                                        <Switch v-model="device.data.active" :class="[device.data.active ? 'bg-indigo-600 focus:ring-indigo-600' : 'bg-gray-200 focus:ring-gray-300', 'select-none relative inline-flex h-6 w-10 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2']">
-                                            <span aria-hidden="true" :class="[device.data.active ? 'translate-x-4' : 'translate-x-0', 'select-none pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out']" />
+                                        <Switch
+                                            v-model="device.data.active"
+                                            :class="[
+                                                device.data.active
+                                                    ? 'bg-indigo-600 focus:ring-indigo-600'
+                                                    : 'bg-gray-200 focus:ring-gray-300',
+                                                'select-none relative inline-flex h-6 w-10 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2',
+                                            ]"
+                                        >
+                                            <span
+                                                aria-hidden="true"
+                                                :class="[
+                                                    device.data.active
+                                                        ? 'translate-x-4'
+                                                        : 'translate-x-0',
+                                                    'select-none pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out',
+                                                ]"
+                                            />
                                         </Switch>
-                                        <SwitchLabel as="span" class="select-none cursor-pointer ml-3 text-sm">
+                                        <SwitchLabel
+                                            as="span"
+                                            class="select-none cursor-pointer ml-3 text-sm"
+                                        >
                                             <div class="font-medium text-gray-900">
                                                 {{ t('deviceActive') }} &#10150;
                                             </div>
@@ -179,17 +231,42 @@
                                 </div>
                                 <div class="www py-2 px-1 sm:p-4">
                                     <SwitchGroup as="div" class="flex items-center mt-6">
-                                        <Switch v-model="device.data.settings.master" :class="[device.data.settings.master ? 'bg-indigo-600 focus:ring-indigo-600' : 'bg-gray-200 focus:ring-gray-300', 'select-none relative inline-flex h-6 w-10 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2']">
-                                            <span aria-hidden="true" :class="[device.data.settings.master ? 'translate-x-4' : 'translate-x-0', 'select-none pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out']" />
+                                        <Switch
+                                            v-model="device.data.settings.master"
+                                            :class="[
+                                                device.data.settings.master
+                                                    ? 'bg-indigo-600 focus:ring-indigo-600'
+                                                    : 'bg-gray-200 focus:ring-gray-300',
+                                                'select-none relative inline-flex h-6 w-10 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2',
+                                            ]"
+                                        >
+                                            <span
+                                                aria-hidden="true"
+                                                :class="[
+                                                    device.data.settings.master
+                                                        ? 'translate-x-4'
+                                                        : 'translate-x-0',
+                                                    'select-none pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out',
+                                                ]"
+                                            />
                                         </Switch>
-                                        <SwitchLabel as="span" class="select-none cursor-pointer ml-3 text-sm">
+                                        <SwitchLabel
+                                            as="span"
+                                            class="select-none cursor-pointer ml-3 text-sm"
+                                        >
                                             <div class="font-medium text-gray-900">
                                                 {{ t('deviceSettingsMaster') }} &#10150;
                                             </div>
-                                            <div v-if="!device.data.settings.master" class="text-gray-500">
+                                            <div
+                                                v-if="!device.data.settings.master"
+                                                class="text-gray-500"
+                                            >
                                                 {{ t('deviceSettingsMasterSlave') }}
                                             </div>
-                                            <div v-if="device.data.settings.master" class="text-gray-500">
+                                            <div
+                                                v-if="device.data.settings.master"
+                                                class="text-gray-500"
+                                            >
                                                 {{ t('deviceSettingsMasterShow') }}
                                             </div>
                                         </SwitchLabel>
@@ -197,30 +274,42 @@
                                 </div>
 
                                 <div class="www py-2 px-1 sm:p-4">
-                                    <label for="role" class="block text-sm font-medium text-gray-700 select-none">
+                                    <label
+                                        for="role"
+                                        class="block text-sm font-medium text-gray-700 select-none"
+                                    >
                                         {{ t('deviceMetaLastUpdate') }}
                                     </label>
                                     <p
                                         class="mt-1 block w-full bg-white border border-gray-300 rounded shadow-sm py-1 px-2 md:py-2 md:px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-sm sm:text-sm"
                                     >
                                         <time :datetime="device.data.meta.last_update">
-                                            {{ $dayjs(device.data.meta.last_update).format('D. M. YYYY HH:mm') || '&#128752;' }}
+                                            {{
+                                                $dayjs(device.data.meta.last_update).format(
+                                                    'D. M. YYYY HH:mm',
+                                                ) || '&#128752;'
+                                            }}
                                         </time>
                                     </p>
                                 </div>
                                 <div class="www py-2 px-1 sm:p-4 col-span-2">
-                                    <label for="role" class="block text-sm font-medium text-gray-700 select-none">
+                                    <label
+                                        for="role"
+                                        class="block text-sm font-medium text-gray-700 select-none"
+                                    >
                                         {{ t('deviceMetaOsStats') }}
                                     </label>
                                     <p
                                         class="mt-1 block w-full bg-white border border-gray-300 rounded shadow-sm text-sm sm:text-sm"
                                     >
                                         <CodeBlock
-                                            v-if="ark(device.data.meta, 'os_stats', false) !== false"
+                                            v-if="
+                                                ark(device.data.meta, 'os_stats', false) !== false
+                                            "
                                             :code="JSON.stringify(device.data.meta.os_stats)"
                                             :highlightjs="true"
                                             lang="json"
-                                            codeBlockRadius="0.25rem"
+                                            code-block-radius="0.25rem"
                                             theme="obsidian"
                                         />
                                         <span v-if="!device.data.meta.os_stats">&#128752;</span>
@@ -247,7 +336,10 @@
                             </div>
                         </div>
                     </div>
-                    <div v-if="result.loading === false" class="fixed bottom-0 w-full md:static sm:col-span-2 select-none">
+                    <div
+                        v-if="result.loading === false"
+                        class="fixed bottom-0 w-full md:static sm:col-span-2 select-none"
+                    >
                         <div class="www py-2 px-1 sm:p-4 text-center">
                             <button
                                 class="bg-gray-200 border border-transparent rounded shadow-sm py-2 px-4 mr-4 inline-flex justify-center text-base font-medium text-gray-600 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
@@ -266,9 +358,7 @@
                                         : 'bg-gray-400 hover:bg-gray-400 focus:outline-none cursor-not-allowed'
                                 "
                                 :disabled="result.canSave === false"
-                                @click="
-                                    getDeviceData();
-                                "
+                                @click="getDeviceData()"
                             >
                                 <MdiRefresh class="w-6 h-6 mr-2" />
                                 {{ t('buttonRefresh') }}
@@ -427,7 +517,12 @@ const sendDeviceData = async (andClose = false) => {
         // let note = ark(result, 'message', 'Error logging in');
         let note = 'Device';
         let group = 'warning';
-        if (!!result.error && !!result.error.response && !!result.error.response.data && !!result.error.response.data.message) {
+        if (
+            !!result.error &&
+            !!result.error.response &&
+            !!result.error.response.data &&
+            !!result.error.response.data.message
+        ) {
             note = `${result.error.response.data.message}`;
             group = 'error';
         }
@@ -443,8 +538,7 @@ const sendDeviceData = async (andClose = false) => {
     }
 };
 
-
-watch(device, (r) => {
+watch(device, () => {
     validateDeviceData();
     //console.log('DeviceDetailView.vue watch result', r);
 });

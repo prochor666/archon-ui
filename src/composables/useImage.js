@@ -4,7 +4,10 @@ import axios from 'axios';
 export const dropFileFromInput = (dataPack, fileInputId = '#dropzone-file') => {
     const image = document.querySelector(fileInputId).files[0];
 
-    if (typeof image === 'object' && ['png', 'jpg', 'jpeg', 'gif'].includes(fileExtension(image.name).toLowerCase())) {
+    if (
+        typeof image === 'object' &&
+        ['png', 'jpg', 'jpeg', 'gif'].includes(fileExtension(image.name).toLowerCase())
+    ) {
         // Setup load end event
         const reader = new FileReader();
         reader.onloadend = () => {

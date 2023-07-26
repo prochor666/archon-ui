@@ -34,15 +34,23 @@
                             leave-to="opacity-0"
                         >
                             <div class="absolute left-full top-0 flex w-16 justify-center pt-5">
-                                <button type="button" class="-m-2.5 p-2.5" @click="state.open = false">
+                                <button
+                                    type="button"
+                                    class="-m-2.5 p-2.5"
+                                    @click="state.open = false"
+                                >
                                     <span class="sr-only">Close sidebar</span>
                                     <MdiClose class="h-6 w-6 text-white" aria-hidden="true" />
                                 </button>
                             </div>
                         </TransitionChild>
                         <!-- Sidebar component, swap this element with another sidebar if you like -->
-                        <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-4 ring-1 ring-white/10">
-                            <div class="flex h-16 shrink-01 items-center text-gray-400 text-xl font-medium">
+                        <div
+                            class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-4 ring-1 ring-white/10"
+                        >
+                            <div
+                                class="flex h-16 shrink-01 items-center text-gray-400 text-xl font-medium"
+                            >
                                 <BrandLogo css-class="h-7 w-auto mr-2" /> {{ t('brand') }}
                             </div>
                             <nav class="flex flex-1 flex-col">
@@ -59,14 +67,20 @@
                                                         'group flex gap-x-3 rounded p-2 text-sm leading-6 font-semibold',
                                                     ]"
                                                 >
-                                                    <component :is="item.icon" class="h-6 w-6 shrink-0" aria-hidden="true" />
+                                                    <component
+                                                        :is="item.icon"
+                                                        class="h-6 w-6 shrink-0"
+                                                        aria-hidden="true"
+                                                    />
                                                     {{ t(item.title) }}
                                                 </a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <div class="text-xs font-semibold leading-6 text-gray-400">Your network</div>
+                                        <div class="text-xs font-semibold leading-6 text-gray-400">
+                                            Your network
+                                        </div>
                                         <ul role="list" class="-mx-2 mt-2 space-y-1">
                                             <li v-for="item in navigation.user" :key="item.name">
                                                 <a
@@ -78,7 +92,11 @@
                                                         'group flex gap-x-3 rounded p-2 text-sm leading-6 font-semibold',
                                                     ]"
                                                 >
-                                                    <component :is="item.icon" class="h-6 w-6 shrink-0" aria-hidden="true" />
+                                                    <component
+                                                        :is="item.icon"
+                                                        class="h-6 w-6 shrink-0"
+                                                        aria-hidden="true"
+                                                    />
                                                     {{ t(item.title) }}
                                                 </a>
                                             </li>
@@ -90,7 +108,10 @@
                                             class="group -mx-2 flex gap-x-3 rounded p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white"
                                             @click.prevent="logoutSession()"
                                         >
-                                            <MdiLogout class="h-6 w-6 shrink-0" aria-hidden="true" />
+                                            <MdiLogout
+                                                class="h-6 w-6 shrink-0"
+                                                aria-hidden="true"
+                                            />
                                             {{ t('Logout') }}
                                         </a>
                                     </li>
@@ -124,14 +145,20 @@
                                         'group flex gap-x-3 rounded p-2 text-sm leading-6 font-semibold',
                                     ]"
                                 >
-                                    <component :is="item.icon" class="h-6 w-6 shrink-0" aria-hidden="true" />
+                                    <component
+                                        :is="item.icon"
+                                        class="h-6 w-6 shrink-0"
+                                        aria-hidden="true"
+                                    />
                                     {{ t(item.title) }}
                                 </router-link>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <div class="text-xs font-semibold leading-6 text-gray-400">{{ keeper('username') }}</div>
+                        <div class="text-xs font-semibold leading-6 text-gray-400">
+                            {{ keeper('username') }}
+                        </div>
                         <ul role="list" class="-mx-2 mt-2 space-y-1">
                             <li v-for="item in navigation.user" :key="item.name">
                                 <router-link
@@ -143,7 +170,11 @@
                                         'group flex gap-x-3 rounded p-2 text-sm leading-6 font-semibold',
                                     ]"
                                 >
-                                    <component :is="item.icon" class="h-6 w-6 shrink-0" aria-hidden="true" />
+                                    <component
+                                        :is="item.icon"
+                                        class="h-6 w-6 shrink-0"
+                                        aria-hidden="true"
+                                    />
                                     {{ t(item.title) }}
                                 </router-link>
                             </li>
@@ -168,7 +199,11 @@
         <div
             class="fixed top-0 left-0 lg:left-72 right-0 z-7000 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8"
         >
-            <button type="button" class="-m-2.5 p-2.5 text-gray-700 lg:hidden" @click="state.open = true">
+            <button
+                type="button"
+                class="-m-2.5 p-2.5 text-gray-700 lg:hidden"
+                @click="state.open = true"
+            >
                 <span class="sr-only">Open sidebar</span>
                 <MdiMenu class="h-6 w-6" aria-hidden="true" />
             </button>
@@ -179,7 +214,10 @@
             <div class="flex flex-1 gap-x-4 self-stretch lg:gap-x-6 pl-0 xl:pl-4">
                 <div class="relative flex flex-1">
                     <label for="search-field" class="sr-only">{{ t('Search') }}</label>
-                    <MdiMagnify class="pointer-events-none absolute inset-y-0 left-0 h-full w-5 text-gray-400" aria-hidden="true" />
+                    <MdiMagnify
+                        class="pointer-events-none absolute inset-y-0 left-0 h-full w-5 text-gray-400"
+                        aria-hidden="true"
+                    />
                     <input
                         id="search-field"
                         class="block h-full w-full border-0 py-0 pl-8 pr-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
@@ -190,7 +228,10 @@
                 </div>
                 <div class="flex items-center gap-x-4 lg:gap-x-6">
                     <!-- Separator -->
-                    <div class="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-900/10" aria-hidden="true" />
+                    <div
+                        class="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-900/10"
+                        aria-hidden="true"
+                    />
 
                     <button type="button" class="-m-2.5 p-2.5 text-gray-400 hover:text-gray-500">
                         <span class="sr-only">View notifications</span>

@@ -47,7 +47,11 @@ export const isLoggedIn = async () => {
         authToken: keeper('authToken'),
     });
 
-    if (result.status === true && typeof result.data === 'object' && Object.keys(result.data).length > 0) {
+    if (
+        result.status === true &&
+        typeof result.data === 'object' &&
+        Object.keys(result.data).length > 0
+    ) {
         keeper('id', result.data.id);
         keeper('username', result.data.username);
         keeper('role', result.data.role);

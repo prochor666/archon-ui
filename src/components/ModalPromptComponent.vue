@@ -14,7 +14,9 @@
             </TransitionChild>
 
             <div class="fixed inset-0 z-10 overflow-y-auto">
-                <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                <div
+                    class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+                >
                     <TransitionChild
                         as="template"
                         enter="ease-out duration-300"
@@ -26,7 +28,9 @@
                     >
                         <DialogPanel
                             :class="[
-                                state.maxWidthMax === true > 0 ? `sm:w-full sm:max-w-5xl` : 'sm:w-full sm:max-w-lg',
+                                state.maxWidthMax === true > 0
+                                    ? `sm:w-full sm:max-w-5xl`
+                                    : 'sm:w-full sm:max-w-lg',
                                 'relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:p-6',
                             ]"
                         >
@@ -47,7 +51,10 @@
                                     <MdiBell class="h-6 w-6 text-gray-600" aria-hidden="true" />
                                 </div>
                                 <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                                    <DialogTitle as="h3" class="text-base font-semibold leading-6 text-gray-900">
+                                    <DialogTitle
+                                        as="h3"
+                                        class="text-base font-semibold leading-6 text-gray-900"
+                                    >
                                         {{ state.title }}
                                     </DialogTitle>
                                     <div class="mt-2">
@@ -58,7 +65,11 @@
                                     <div v-if="tpl.length > 10" class="mt-2" v-html="tpl"></div>
                                     <div v-if="state.image && state.image.length > 10" class="mt-2">
                                         <div class="result">
-                                            <img v-if="state.image" :src="state.image" alt="Image" />
+                                            <img
+                                                v-if="state.image"
+                                                :src="state.image"
+                                                alt="Image"
+                                            />
                                         </div>
                                     </div>
                                 </div>

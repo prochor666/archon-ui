@@ -3,7 +3,10 @@
         <ol role="list" class="pr-2 flex space-x-2 px-1 my-2">
             <li v-for="(link, index) in links" :key="`brd${index}`" class="flex">
                 <div class="flex items-center">
-                    <router-link :to="{ name: link.name, params: link.params || {} }" class="text-gray-400 hover:text-gray-500">
+                    <router-link
+                        :to="{ name: link.name, params: link.params || {} }"
+                        class="text-gray-400 hover:text-gray-500"
+                    >
                         <MdiHome v-if="index === 0" class="w-6 h-6" />
                         <span v-if="index === 0" class="sr-only">Home</span>
                     </router-link>
@@ -16,7 +19,11 @@
                     >
                         {{ link.title }}
                     </router-link>
-                    <span v-if="index > 0 && link.final" aria-current="page" class="ml-2 text-sm font-medium text-gray-400">
+                    <span
+                        v-if="index > 0 && link.final"
+                        aria-current="page"
+                        class="ml-2 text-sm font-medium text-gray-400"
+                    >
                         {{ link.title }}
                     </span>
                 </div>

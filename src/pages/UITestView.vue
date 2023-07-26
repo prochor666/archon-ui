@@ -4,8 +4,8 @@
     <div>
         <!-- Navbar -->
         <KeepAlive>
-    <NavigationMain />
-</KeepAlive>
+            <NavigationMain />
+        </KeepAlive>
 
         <div class="lg:pl-72">
             <main>
@@ -27,19 +27,45 @@
                                 </p>
                             </div>
 
-                            <div class="grid grid-cols-3 gap-2 md:grid-cols-4 md:gap-4 lg:grid-cols-6 text-3xl md:text-4xl">
-                                <MdiAccount class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600" />
-                                <MdiLock class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600" />
-                                <MdiFilePdfBox class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600" />
-                                <MdiClose class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600" />
-                                <MdiHome class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600" />
-                                <MdiMagnify class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600" />
-                                <MdiMenu class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600" />
-                                <MdiCog class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600" />
-                                <MdiContentSave class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600" />
-                                <MdiEmail class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600" />
-                                <MdiKeyboard class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600" />
-                                <MdiCloudLock class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600" />
+                            <div
+                                class="grid grid-cols-3 gap-2 md:grid-cols-4 md:gap-4 lg:grid-cols-6 text-3xl md:text-4xl"
+                            >
+                                <MdiAccount
+                                    class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600"
+                                />
+                                <MdiLock
+                                    class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600"
+                                />
+                                <MdiFilePdfBox
+                                    class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600"
+                                />
+                                <MdiClose
+                                    class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600"
+                                />
+                                <MdiHome
+                                    class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600"
+                                />
+                                <MdiMagnify
+                                    class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600"
+                                />
+                                <MdiMenu
+                                    class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600"
+                                />
+                                <MdiCog
+                                    class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600"
+                                />
+                                <MdiContentSave
+                                    class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600"
+                                />
+                                <MdiEmail
+                                    class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600"
+                                />
+                                <MdiKeyboard
+                                    class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600"
+                                />
+                                <MdiCloudLock
+                                    class="mx-auto text-indigo-600 w-10 h-10 p-1 rounded border border-emerald-600"
+                                />
                             </div>
                         </div>
                         <div class="max-w-7xl mx-auto w-full space-y-6">
@@ -47,32 +73,130 @@
                                 <h2 class="mt-6 text-xl font-bold text-emerald-600">Colors</h2>
                             </div>
 
-                            <div class="grid grid-cols-3 gap-2 md:grid-cols-4 md:gap-4 lg:grid-cols-6">
-                                <div class="rounded text-center border border-black bg-white h-10">white</div>
-                                <div class="rounded text-center border border-black bg-slate-400 h-10">slate</div>
-                                <div class="rounded text-center border border-black bg-gray-400 h-10">gray</div>
-                                <div class="rounded text-center border border-black bg-zinc-400 h-10">zinc</div>
-                                <div class="rounded text-center border border-black bg-neutral-400 h-10">neutral</div>
-                                <div class="rounded text-center border border-black bg-stone-400 h-10">stone</div>
-                                <div class="rounded text-center border border-black bg-red-400 h-10">red</div>
-                                <div class="rounded text-center border border-black bg-orange-400 h-10">orange</div>
-                                <div class="rounded text-center border border-black bg-amber-400 h-10">amber</div>
-                                <div class="rounded text-center border border-black bg-yellow-400 h-10">yellow</div>
-                                <div class="rounded text-center border border-black bg-lime-400 h-10">lime</div>
-                                <div class="rounded text-center border border-black bg-green-400 h-10">green</div>
-                                <div class="rounded text-center border border-black bg-emerald-400 h-10">emerald</div>
-                                <div class="rounded text-center border border-black bg-teal-400 h-10">teal</div>
-                                <div class="rounded text-center border border-black bg-cyan-400 h-10">cyan</div>
-                                <div class="rounded text-center border border-black bg-sky-400 h-10">sky</div>
-                                <div class="rounded text-center border border-black bg-blue-400 h-10">blue</div>
-                                <div class="rounded text-center border border-black bg-indigo-400 h-10">indigo</div>
-                                <div class="rounded text-center border border-black bg-violet-400 h-10">violet</div>
-                                <div class="rounded text-center border border-black bg-purple-400 h-10">purple</div>
-                                <div class="rounded text-center border border-black bg-violet-400 h-10">violet</div>
-                                <div class="rounded text-center border border-black bg-fuchsia-400 h-10">fuchsia</div>
-                                <div class="rounded text-center border border-black bg-pink-400 h-10">pink</div>
-                                <div class="rounded text-center border border-black bg-rose-400 h-10">rose</div>
-                                <div class="rounded text-center border border-black bg-black h-10">black</div>
+                            <div
+                                class="grid grid-cols-3 gap-2 md:grid-cols-4 md:gap-4 lg:grid-cols-6"
+                            >
+                                <div class="rounded text-center border border-black bg-white h-10">
+                                    white
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-slate-400 h-10"
+                                >
+                                    slate
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-gray-400 h-10"
+                                >
+                                    gray
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-zinc-400 h-10"
+                                >
+                                    zinc
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-neutral-400 h-10"
+                                >
+                                    neutral
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-stone-400 h-10"
+                                >
+                                    stone
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-red-400 h-10"
+                                >
+                                    red
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-orange-400 h-10"
+                                >
+                                    orange
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-amber-400 h-10"
+                                >
+                                    amber
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-yellow-400 h-10"
+                                >
+                                    yellow
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-lime-400 h-10"
+                                >
+                                    lime
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-green-400 h-10"
+                                >
+                                    green
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-emerald-400 h-10"
+                                >
+                                    emerald
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-teal-400 h-10"
+                                >
+                                    teal
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-cyan-400 h-10"
+                                >
+                                    cyan
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-sky-400 h-10"
+                                >
+                                    sky
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-blue-400 h-10"
+                                >
+                                    blue
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-indigo-400 h-10"
+                                >
+                                    indigo
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-violet-400 h-10"
+                                >
+                                    violet
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-purple-400 h-10"
+                                >
+                                    purple
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-violet-400 h-10"
+                                >
+                                    violet
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-fuchsia-400 h-10"
+                                >
+                                    fuchsia
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-pink-400 h-10"
+                                >
+                                    pink
+                                </div>
+                                <div
+                                    class="rounded text-center border border-black bg-rose-400 h-10"
+                                >
+                                    rose
+                                </div>
+                                <div class="rounded text-center border border-black bg-black h-10">
+                                    black
+                                </div>
                             </div>
                         </div>
                         <div class="max-w-7xl mx-auto w-full space-y-6">
@@ -80,7 +204,9 @@
                                 <h2 class="mt-6 text-xl font-bold text-emerald-600">Spinners</h2>
                             </div>
 
-                            <div class="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 md:gap-4 text-3xl md:text-4xl py-4">
+                            <div
+                                class="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 md:gap-4 text-3xl md:text-4xl py-4"
+                            >
                                 <div>
                                     <Spinner
                                         type="complex"

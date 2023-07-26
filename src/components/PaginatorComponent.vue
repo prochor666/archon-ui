@@ -1,6 +1,9 @@
 <template>
     <!-- Pagination -->
-    <nav class="border-t border-gray-200 px-4 flex items-start justify-between sm:px-0" aria-label="Pagination">
+    <nav
+        class="border-t border-gray-200 px-4 flex items-start justify-between sm:px-0"
+        aria-label="Pagination"
+    >
         <div :key="usePaginator.options.page" class="-mt-px w-0 flex-1 flex">
             <router-link
                 :to="{
@@ -10,7 +13,11 @@
                     },
                 }"
                 class="border-t-2 border-transparent pt-4 pr-1 inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-200"
-                @click="usePaginator.pageize(usePaginator.options.page - 1 > 0 ? usePaginator.options.page - 1 : 1)"
+                @click="
+                    usePaginator.pageize(
+                        usePaginator.options.page - 1 > 0 ? usePaginator.options.page - 1 : 1,
+                    )
+                "
             >
                 <ArrowNarrowLeftIcon class="mr-3 h-5 w-5" aria-hidden="true" />
                 <span class="hidden sm:inline">Previous</span>
@@ -23,8 +30,12 @@
                         <ListboxButton
                             class="relative w-full py-2 pl-3 pr-10 text-left bg-gray-100 text-gray-800 rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-indigo-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm"
                         >
-                            <span class="block truncate font-medium">Page {{ usePaginator.options.page }}</span>
-                            <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                            <span class="block truncate font-medium"
+                                >Page {{ usePaginator.options.page }}</span
+                            >
+                            <span
+                                class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
+                            >
                                 <SelectorIcon class="w-5 h-5 text-gray-500" aria-hidden="true" />
                             </span>
                         </ListboxButton>
@@ -47,7 +58,9 @@
                             >
                                 <li
                                     :class="[
-                                        usePaginator.options.page === page ? 'font-bold' : 'font-normal',
+                                        usePaginator.options.page === page
+                                            ? 'font-bold'
+                                            : 'font-normal',
                                         'select-none relative py-2 pl-10 pr-4',
                                     ]"
                                 >
@@ -97,7 +110,12 @@ import { useRouter } from 'vue-router';
 import usePaginator from '../composables/usePaginator';
 import { Listbox, ListboxButton, ListboxOptions, ListboxOption } from '@headlessui/vue';
 
-import { ArrowNarrowLeftIcon, ArrowNarrowRightIcon, CheckIcon, SelectorIcon } from '@heroicons/vue/solid';
+import {
+    ArrowNarrowLeftIcon,
+    ArrowNarrowRightIcon,
+    CheckIcon,
+    SelectorIcon,
+} from '@heroicons/vue/solid';
 
 const router = useRouter();
 </script>

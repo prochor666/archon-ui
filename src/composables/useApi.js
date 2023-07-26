@@ -10,7 +10,13 @@ export const r = async (input) => {
         Accept: '*/*',
     };
 
-    let { endpoint: endpoint = '', method: method = 'get', data: data = {}, headers: headers = {}, authToken: authToken = '' } = input;
+    let {
+        endpoint: endpoint = '',
+        method: method = 'get',
+        data: data = {},
+        headers: headers = {},
+        authToken: authToken = '',
+    } = input;
 
     if (typeof authToken === 'string' && authToken.length > 0) {
         requestHeaders.Authorization = `Bearer ${authToken}`;

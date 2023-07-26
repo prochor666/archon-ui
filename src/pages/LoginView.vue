@@ -3,12 +3,17 @@
 
     <div class="bg-white select-none bg-cover" style="background-image: url('/images/lgbg.jpg')">
         <main class="w-full mx-auto flex items-center justify-center min-h-screen">
-            <div class="max-w-md w-full space-y-4 p-6 bg-white rounded shadow-xl shadow-blue-600/50">
+            <div
+                class="max-w-md w-full space-y-4 p-6 bg-white rounded shadow-xl shadow-blue-600/50"
+            >
                 <div class="text-center text-3xl">
-                    <MdiAccount class="mx-auto text-indigo-600 w-10 h-10" aria-hidden="true" />
+                    <BrandLogo css-class="rounded-full mx-auto h-10 w-auto" />
+                    <span class="mx-auto text-xl font-medium text-gray-800 uppercase">{{
+                        t('brand')
+                    }}</span>
                 </div>
                 <div>
-                    <h1 class="mt-6 text-center text-2xl font-bold text-gray-900">
+                    <h1 class="mt-4 text-center text-xl font-medium text-indigo-600">
                         {{ t('Login') }}
                     </h1>
                 </div>
@@ -78,13 +83,14 @@ import { ref, reactive } from 'vue';
 import { useRoute } from 'vue-router';
 import Headify from '../components/HeadifyComponent.vue';
 import Spinner from '../components/SpinnerComponent.vue';
+import BrandLogo from '../components/BrandLogoComponent.vue';
 import navs from '../composables/navs';
 import { recover } from '../composables/useAuth.js';
 import { ark } from '../composables/utils';
 import { notify } from 'notiwind';
 import { t } from '../composables/i18n';
 
-import { MdiAccount, MdiLock } from 'materialdesignicons-vue3/icons/';
+import { MdiLock } from 'materialdesignicons-vue3/icons/';
 
 const login = ref('');
 const route = useRoute();
@@ -116,7 +122,12 @@ const sendRecovery = async () => {
         let note = `Error recovering user "${login.value}"`;
         let group = 'warning';
 
-        if (!!result.error && !!result.error.response && !!result.error.response.data && !!result.error.response.data.message) {
+        if (
+            !!result.error &&
+            !!result.error.response &&
+            !!result.error.response.data &&
+            !!result.error.response.data.message
+        ) {
             note = `${result.error.response.data.message}`;
             group = 'error';
         }

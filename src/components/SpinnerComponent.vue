@@ -101,7 +101,15 @@
                             repeatCount="indefinite"
                         />
                     </line>
-                    <line stroke-linecap="round" stroke-width="4" stroke-miterlimit="10" x1="50" y1="50" x2="49.5" y2="74">
+                    <line
+                        stroke-linecap="round"
+                        stroke-width="4"
+                        stroke-miterlimit="10"
+                        x1="50"
+                        y1="50"
+                        x2="49.5"
+                        y2="74"
+                    >
                         <animateTransform
                             attributeName="transform"
                             :dur="speedFull"
@@ -174,7 +182,9 @@
                     stroke="none"
                     :class="`mx-auto w-16 h-16 mx-auto ${color}`"
                 >
-                    <path d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+                    <path
+                        d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"
+                    >
                         <animateTransform
                             attributeName="transform"
                             attributeType="XML"
@@ -212,7 +222,13 @@
                             repeatCount="indefinite"
                         />
                     </rect>
-                    <rect x="25" width="5" height="100" transform="translate(0) rotate(180 25 50)" :class="colorAccent">
+                    <rect
+                        x="25"
+                        width="5"
+                        height="100"
+                        transform="translate(0) rotate(180 25 50)"
+                        :class="colorAccent"
+                    >
                         <animate
                             attributeName="height"
                             attributeType="XML"
@@ -232,7 +248,13 @@
                             :begin="beginOffset(speedFull, 3)"
                         />
                     </rect>
-                    <rect x="63" width="5" height="100" transform="translate(0) rotate(180 61 50)" :class="colorAccent">
+                    <rect
+                        x="63"
+                        width="5"
+                        height="100"
+                        transform="translate(0) rotate(180 61 50)"
+                        :class="colorAccent"
+                    >
                         <animate
                             attributeName="height"
                             attributeType="XML"
@@ -252,7 +274,13 @@
                             :begin="beginOffset(speedFull, 7)"
                         />
                     </rect>
-                    <rect x="103" width="5" height="100" transform="translate(0) rotate(180 97 50)" :class="colorAccent">
+                    <rect
+                        x="103"
+                        width="5"
+                        height="100"
+                        transform="translate(0) rotate(180 97 50)"
+                        :class="colorAccent"
+                    >
                         <animate
                             attributeName="height"
                             attributeType="XML"
@@ -270,13 +298,21 @@
                 >
                     <span
                         v-if="dots === true && dotDual === true"
-                        :class="[dotReverse === true ? '' : '-scale-x-100 transform', 'inline-block mr-1']"
+                        :class="[
+                            dotReverse === true ? '' : '-scale-x-100 transform',
+                            'inline-block mr-1',
+                        ]"
                         >{{ dotsStr }}</span
                     >
                     <span v-if="text.length > 0" v-html="text"></span>
-                    <span v-if="dots === true" :class="[dotReverse === true ? '-scale-x-100 transform' : '', 'inline-block ml-1']">{{
-                        dotsStr
-                    }}</span>
+                    <span
+                        v-if="dots === true"
+                        :class="[
+                            dotReverse === true ? '-scale-x-100 transform' : '',
+                            'inline-block ml-1',
+                        ]"
+                        >{{ dotsStr }}</span
+                    >
                 </div>
             </div>
         </div>
@@ -393,11 +429,14 @@ const beginOffset = (s, o) => {
     return `${x}ms`;
 };
 
-setInterval(() => {
-    dotsFill = dotsFill === dotsMax ? 0 : dotsFill + 1;
-    dotsStr.value = dotChar.value.repeat(dotsFill);
-    dotsStr.value = dotsStr.value.padEnd(dotsMax * dotChar.value.length, dotsFillPattern);
-}, parseInt(speed.value / 4));
+setInterval(
+    () => {
+        dotsFill = dotsFill === dotsMax ? 0 : dotsFill + 1;
+        dotsStr.value = dotChar.value.repeat(dotsFill);
+        dotsStr.value = dotsStr.value.padEnd(dotsMax * dotChar.value.length, dotsFillPattern);
+    },
+    parseInt(speed.value / 4),
+);
 </script>
 
 <style></style>

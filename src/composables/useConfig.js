@@ -13,6 +13,18 @@ export const load = () => {
             editors: ['editor', 'admin'],
             admins: ['admin'],
         },
+        tag: {
+            group: [
+                'users',
+                'devices',
+                'items/question',
+                'items/answer',
+                'items/game',
+                'servers',
+                'scripts',
+                'sites',
+            ],
+        },
         overrideSecurity: {
             routes: [],
             ids: [],

@@ -121,7 +121,10 @@ export const keeperRemove = (key, valueIf = '') => {
     const config = load();
     const safeKey = `${prefix}_${key}`;
     const storageEngine = config.keeper.safe ? sessionStorage : localStorage;
-    if ((typeof valueIf === 'string' && valueIf.length === 0) || valueIf === storageEngine.getItem(safeKey)) {
+    if (
+        (typeof valueIf === 'string' && valueIf.length === 0) ||
+        valueIf === storageEngine.getItem(safeKey)
+    ) {
         return storageEngine.removeItem(safeKey);
     }
 };
@@ -190,7 +193,9 @@ export const ark = (o, k, d = false) => {
 };
 
 export const isMACAddress = (str) => {
-    const regex = new RegExp(/^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})|([0-9a-fA-F]{4}.[0-9a-fA-F]{4}.[0-9a-fA-F]{4})$/);
+    const regex = new RegExp(
+        /^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})|([0-9a-fA-F]{4}.[0-9a-fA-F]{4}.[0-9a-fA-F]{4})$/,
+    );
     if (str === null) {
         return false;
     }

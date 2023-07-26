@@ -3,7 +3,9 @@
 
     <div class="bg-white select-none bg-cover" style="background-image: url('/images/lgbg.jpg')">
         <main class="w-full mx-auto flex items-center justify-center min-h-screen">
-            <div class="max-w-md w-full space-y-4 p-6 bg-white rounded shadow-xl shadow-blue-600/50">
+            <div
+                class="max-w-md w-full space-y-4 p-6 bg-white rounded shadow-xl shadow-blue-600/50"
+            >
                 <div class="text-center text-3xl">
                     <MdiAccount class="mx-auto text-indigo-600 w-10 h-10" aria-hidden="true" />
                 </div>
@@ -145,7 +147,12 @@ const sendActivation = async () => {
         let note = 'Error logging in';
         let group = 'warning';
 
-        if (!!result.error && !!result.error.response && !!result.error.response.data && !!result.error.response.data.message) {
+        if (
+            !!result.error &&
+            !!result.error.response &&
+            !!result.error.response.data &&
+            !!result.error.response.data.message
+        ) {
             note = `${result.error.response.data.message}`;
             group = 'error';
         }

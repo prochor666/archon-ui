@@ -163,8 +163,7 @@ router.beforeEach(async (to) => {
     return '/login';
 });
 
-const app = createApp(App)
-    .component('CodeBlock', CodeBlock);
+const app = createApp(App).component('CodeBlock', CodeBlock);
 
 app.config.globalProperties.$dayjs = dayjs;
 app.config.globalProperties.t = t;
