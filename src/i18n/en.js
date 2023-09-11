@@ -33,6 +33,8 @@ const en = () => {
         Device: 'Client device',
         Sites: 'Sites',
         Site: 'Site',
+        Server: 'Server',
+        Servers: 'Servers',
         Search: 'Search',
         Sorry: 'Sorry',
         Error: 'Error',

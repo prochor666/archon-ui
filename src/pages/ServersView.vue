@@ -20,16 +20,13 @@
                                 role="list"
                                 class="divide-y divide-gray-200"
                             >
-                                <li v-for="user in result.users" :key="user.username">
+                                <li v-for="server in result.servers" :key="server.name">
                                     <router-link
                                         :to="{
-                                            name: user._id === loggedUser.id ? 'me' : 'user',
-                                            params:
-                                                user._id === loggedUser.id
-                                                    ? {}
-                                                    : {
-                                                          userid: user._id,
-                                                      },
+                                            name: 'server',
+                                            params: {
+                                                serverid: server._id,
+                                            },
                                         }"
                                         class="block hover:bg-gray-50"
                                     >
@@ -37,36 +34,40 @@
                                             <div class="min-w-0 flex-1 flex items-start">
                                                 <div
                                                     class="font-medium text-sm pl-3 lg:pl-7 xl:pl-11 text-gray-600"
-                                                    :title="user._id"
+                                                    :title="server._id"
                                                 >
-                                                    <MdiAccountCog class="h-6 w-6 text-gray-400" />
+                                                    <MdiServerNetwork
+                                                        class="h-6 w-6 text-gray-400"
+                                                    />
                                                 </div>
                                                 <div
-                                                    class="min-w-0 flex-1 px-4 md:grid md:grid-cols-3 md:gap-4"
+                                                    class="min-w-0 flex-1 px-4 md:grid md:grid-cols-4 md:gap-4"
                                                 >
+                                                    <div
+                                                        class="text-base font-medium text-indigo-600 truncate"
+                                                    >
+                                                        {{ server.name }}
+                                                    </div>
                                                     <div>
                                                         <p
-                                                            class="text-base font-medium text-indigo-600 truncate"
+                                                            class="mt-2 flex items-center text-sm text-gray-500"
                                                         >
-                                                            {{ user.username }} ({{
-                                                                user.firstname
-                                                            }}
-                                                            {{ user.lastname }})
+                                                            <MdiFolderKeyNetwork
+                                                                class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+                                                            />
+                                                            <span class="truncate">
+                                                                {{ server.ipv4 }}
+                                                            </span>
                                                         </p>
                                                         <p
                                                             class="mt-2 flex items-center text-sm text-gray-500"
                                                         >
-                                                            <MdiEmail
+                                                            <MdiFolderKeyNetwork
                                                                 class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
                                                             />
                                                             <span class="truncate">
-                                                                {{ user.email }}
+                                                                {{ server.ipv6 }}
                                                             </span>
-                                                            <span
-                                                                v-if="user._id === loggedUser.id"
-                                                                class="inline-block rounded bg-indigo-600 text-xs text-white py-px px-2 mx-2"
-                                                                >{{ t('me') }}</span
-                                                            >
                                                         </p>
                                                     </div>
                                                     <div class="hidden md:block">
@@ -74,34 +75,31 @@
                                                             <p class="text-xs text-gray-900">
                                                                 {{ t('created') }}:
                                                                 <strong class="mx-1">
-                                                                    {{
-                                                                        user.creator ||
-                                                                        user.username
-                                                                    }}
+                                                                    {{ server.creator }}
                                                                 </strong>
-                                                                <time :datetime="user.created_at">
+                                                                <time :datetime="server.created_at">
                                                                     {{
                                                                         $dayjs(
-                                                                            user.created_at,
+                                                                            server.created_at,
                                                                         ).format('D. M. YYYY HH:mm')
                                                                     }}
                                                                 </time>
                                                             </p>
                                                             <p
                                                                 v-if="
-                                                                    user.updater &&
-                                                                    user.updater.length > 0
+                                                                    server.updater &&
+                                                                    server.updater.length > 0
                                                                 "
                                                                 class="text-xs text-gray-900"
                                                             >
                                                                 {{ t('updated') }}:
                                                                 <strong class="mx-1">
-                                                                    {{ user.updater }}
+                                                                    {{ server.updater }}
                                                                 </strong>
-                                                                <time :datetime="user.updated_at">
+                                                                <time :datetime="server.updated_at">
                                                                     {{
                                                                         $dayjs(
-                                                                            user.updated_at,
+                                                                            server.updated_at,
                                                                         ).format('D. M. YYYY HH:mm')
                                                                     }}
                                                                 </time>
@@ -112,8 +110,13 @@
                                                         <p
                                                             class="mt-2 flex items-center text-sm text-gray-500 font-medium"
                                                         >
-                                                            <UserBadge
-                                                                :user="{ role: user.role }"
+                                                            <MdiCheckCircle
+                                                                v-if="server.publish"
+                                                                class="flex-shrink-0 mr-2 h-5 w-5 text-emerald-400"
+                                                            />
+                                                            <MdiClock
+                                                                v-if="!server.publish"
+                                                                class="flex-shrink-0 mr-2 h-5 w-5 text-red-400"
                                                             />
                                                         </p>
                                                     </div>
@@ -137,14 +140,14 @@
 
     <button
         class="fixed bottom-6 right-6 p-2 border border-transparent rounded-full shadow-sm flex items-center justify-center font-medium text-white focus:outline-none bg-indigo-600 hover:bg-indigo-700"
-        :title="t('buttonNewUser')"
-        @click="router.push({ name: 'user' })"
+        :title="t('buttonNewDevice')"
+        @click="router.push({ name: 'server' })"
     >
         <MdiPlus class="w-10 h-10" />
     </button>
 
     <Spinner
-        v-if="result.loading && result.users.length === 0"
+        v-if="result.loading && result.servers.length === 0"
         type="complex"
         :color="`text-indigo-600`"
         :color2="`text-emerald-600`"
@@ -162,19 +165,24 @@
 </template>
 
 <script setup>
-import { reactive, watch } from 'vue';
+import { reactive } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { metaFind } from '../composables/navs';
-import { listUsers } from '../composables/useUsers';
-import { getLoggedUser } from '../composables/useAuth';
+import { listServers } from '../composables/useServers';
 import { t } from '../composables/i18n';
 import Spinner from '../components/SpinnerComponent.vue';
 import Headify from '../components/HeadifyComponent.vue';
 import NavigationMain from '../components/NavigationMainComponent.vue';
 import Breadcrumbs from '../components/BreadcrumbsComponent.vue';
-import UserBadge from '../components/UserBadgesComponent.vue';
 
-import { MdiAccountCog, MdiEmail, MdiChevronRight, MdiPlus } from 'materialdesignicons-vue3/icons/';
+import {
+    MdiServerNetwork,
+    MdiClock,
+    MdiFolderKeyNetwork,
+    MdiCheckCircle,
+    MdiChevronRight,
+    MdiPlus,
+} from 'materialdesignicons-vue3/icons/';
 
 const route = useRoute();
 const router = useRouter();
@@ -185,26 +193,21 @@ const breadcrumbsLinks = [
         title: t('Dashboard'),
     },
     {
-        name: 'users',
-        title: t('Users'),
+        name: 'servers',
+        title: t('Servers'),
         final: true,
     },
 ];
 
-const loggedUser = await getLoggedUser();
-let result = reactive({
-    users: [],
+const result = reactive({
+    servers: [],
     loading: true,
 });
 
 setTimeout(async () => {
-    result.users = (await listUsers()) || [];
+    result.servers = (await listServers()) || [];
     result.loading = false;
-}, 400);
-
-watch(result, (r) => {
-    console.log('UsersView.vue watch result', r);
-});
+}, 300);
 
 const headMeta = metaFind(route.name);
 </script>

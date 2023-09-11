@@ -264,6 +264,7 @@ import {
     MdiMenu,
     MdiMagnify,
     MdiBellOutline,
+    MdiServerNetwork,
 } from 'materialdesignicons-vue3/icons/';
 
 defineExpose({
@@ -316,6 +317,13 @@ const navigation = reactive({
             href: '/devices',
             icon: MdiChip,
             active: currentRouteMatch(['devices', 'device'], route.name),
+        },
+        {
+            title: 'Servers',
+            name: 'servers',
+            href: '/servers',
+            icon: MdiServerNetwork,
+            active: currentRouteMatch(['servers', 'server'], route.name),
         },
         {
             title: 'Sites',

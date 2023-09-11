@@ -160,7 +160,7 @@
 
     <Spinner
         v-if="result.loading || saving.active"
-        type="dots"
+        type="complex"
         :color="`text-indigo-600`"
         :color2="`text-emerald-600`"
         :text-color="`text-emerald-400`"

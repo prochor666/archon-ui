@@ -15,6 +15,8 @@ import Me from './pages/MeView.vue';
 import UserDetail from './pages/UserDetailView.vue';
 import Devices from './pages/DevicesView.vue';
 import DeviceDetail from './pages/DeviceDetailView.vue';
+import Servers from './pages/ServersView.vue';
+import ServerDetail from './pages/ServerDetailView.vue';
 import Sites from './pages/SitesView.vue';
 //import SiteDetail from './pages/SiteDetailView.vue';
 import PageNotFound from './pages/PageNotFoundView.vue';
@@ -59,6 +61,18 @@ const routes = [
         component: DeviceDetail,
         name: 'device',
         meta: { requiredRoles: config.roles.editors },
+    },
+    {
+        path: '/servers',
+        component: Servers,
+        name: 'servers',
+        meta: { requiredRoles: config.roles.admins },
+    },
+    {
+        path: '/server/:serverid?',
+        component: ServerDetail,
+        name: 'server',
+        meta: { requiredRoles: config.roles.admins },
     },
     {
         path: '/sites',
@@ -136,7 +150,10 @@ router.beforeEach(async (to) => {
 
     let routeAllowed = false;
 
-    if (typeof requiredRoles === 'object' && (requiredRoles.length === 0 || requiredRoles.includes(loggedUser.role))) {
+    if (
+        typeof requiredRoles === 'object' &&
+        (requiredRoles.length === 0 || requiredRoles.includes(loggedUser.role))
+    ) {
         routeAllowed = true;
     }
 

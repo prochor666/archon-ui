@@ -20,7 +20,7 @@
                                 role="list"
                                 class="divide-y divide-gray-200"
                             >
-                                <li v-for="device in result.devices" :key="device.devicename">
+                                <li v-for="device in result.devices" :key="device.name">
                                     <router-link
                                         :to="{
                                             name: 'device',
@@ -31,7 +31,7 @@
                                         class="block hover:bg-gray-50"
                                     >
                                         <div class="flex items-center py-4">
-                                            <div class="min-w-0 flex-1 flex items-center">
+                                            <div class="min-w-0 flex-1 flex items-start">
                                                 <div
                                                     class="font-medium text-sm pl-3 lg:pl-7 xl:pl-11 text-gray-600"
                                                     :title="device._id"
@@ -43,7 +43,7 @@
                                                 >
                                                     <div>
                                                         <p
-                                                            class="text-sm font-medium text-indigo-600 truncate"
+                                                            class="text-base font-medium text-indigo-600 truncate"
                                                         >
                                                             {{ device.name }} ({{ device.ip }})
                                                         </p>
@@ -136,7 +136,7 @@
 
     <Spinner
         v-if="result.loading && result.devices.length === 0"
-        type="dots"
+        type="complex"
         :color="`text-indigo-600`"
         :color2="`text-emerald-600`"
         :text-color="`text-emerald-400`"

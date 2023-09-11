@@ -59,7 +59,7 @@
 
                 <Spinner
                     v-if="saving.active"
-                    type="dots"
+                    type="complex"
                     :color="`text-indigo-600`"
                     :color2="`text-indigo-400`"
                     :text-color="`text-gray-200`"

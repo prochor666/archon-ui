@@ -33,6 +33,8 @@ const cs = () => {
         Device: 'Klient',
         Sites: 'Prezentace',
         Site: 'Prezentace',
+        Server: 'Server',
+        Servers: 'Servery',
         Search: 'Hledat',
         Sorry: 'Bohužel',
         Error: 'Chyba',

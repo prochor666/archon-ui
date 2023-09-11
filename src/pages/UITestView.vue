@@ -251,7 +251,7 @@
                                 </div>
                                 <div>
                                     <Spinner
-                                        type="dots"
+                                        type="complex"
                                         :color="`my-4 text-indigo-600`"
                                         :color2="`text-emerald-600`"
                                         :text-color="`text-indigo-600`"

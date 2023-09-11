@@ -162,6 +162,42 @@ export const meta = [
         ],
     },
     {
+        matchRoutes: ['servers'],
+        tags: [
+            {
+                tag: 'title',
+                params: {
+                    innerHTML: addTitleSuffix(`${t('Servers')}`),
+                },
+            },
+            {
+                tag: 'meta',
+                params: {
+                    name: 'description',
+                    content: 'View all servers',
+                },
+            },
+        ],
+    },
+    {
+        matchRoutes: ['server'],
+        tags: [
+            {
+                tag: 'title',
+                params: {
+                    innerHTML: addTitleSuffix(`${t('Server')}`),
+                },
+            },
+            {
+                tag: 'meta',
+                params: {
+                    name: 'description',
+                    content: 'Edit Server',
+                },
+            },
+        ],
+    },
+    {
         matchRoutes: ['login'],
         tags: [
             {
